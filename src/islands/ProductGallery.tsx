@@ -3,7 +3,17 @@ import type { ImageView } from '../lib/types';
 import { Icon, Img } from './shared';
 
 /** Large matted gallery: crossfade, thumbnails, swipe and arrow keys. */
-export default function ProductGallery({ images, name, category }: { images: ImageView[]; name: string; category: string }) {
+export default function ProductGallery({
+  images,
+  name,
+  category,
+  hires = false,
+}: {
+  images: ImageView[];
+  name: string;
+  category: string;
+  hires?: boolean;
+}) {
   const [i, setI] = useState(0);
   const start = useRef<{ x: number; y: number } | null>(null);
   const n = images.length;
@@ -23,7 +33,7 @@ export default function ProductGallery({ images, name, category }: { images: Ima
   }
 
   return (
-    <div class="gallery" data-cat={category}>
+    <div class="gallery" data-cat={category} data-hires={hires ? '' : undefined}>
       <div
         class="gallery__stage"
         role="region"

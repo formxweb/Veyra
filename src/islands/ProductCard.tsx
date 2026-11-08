@@ -40,7 +40,7 @@ export function ProductCard({
   };
 
   return (
-    <article class="pcard" data-cat={p.category} data-product={p.id}>
+    <article class="pcard" data-cat={p.category} data-product={p.id} data-hires={p.hires ? '' : undefined}>
       {index != null && <span class="rail__index">{String(index + 1).padStart(2, '0')}</span>}
       <div class="pcard__media">
         <a class="pcard__link" href={p.href} tabIndex={-1} aria-hidden="true" onClick={markTransition}>
@@ -86,6 +86,7 @@ export function ProductCard({
       <div class="pcard__body">
         <div class="pcard__meta">
           <span>{p.brand ?? p.categoryLabel}</span>
+          {p.condition && <span class="pcard__cond">{p.condition}</span>}
         </div>
         <H class="pcard__name">
           <a href={p.href} onClick={markTransition}>

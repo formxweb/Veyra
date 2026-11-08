@@ -79,6 +79,7 @@ export function toView(p: ProductRecord): Promise<ProductView> {
         condition: p.condition,
         available: p.availability !== 'sold_out',
         image: first ? await resolve(first.file, first.alt, CARD_WIDTHS) : null,
+        hires: !!first && !first.quality?.startsWith('interim'),
         search: fold([p.name, p.brand ?? '', c.title, c.label, p.id].join(' ')),
         featured: p.featured,
       } satisfies ProductView;
@@ -123,6 +124,39 @@ export function similar(p: ProductRecord, limit = 8) {
     .filter((q) => q.id !== p.id)
     .sort((a, b) => score(a) - score(b))
     .slice(0, limit);
+}
+
+/** Up to n visually distinct products for a collection (featured first, one per product type). */
+export function representatives(categoryId: string, n = 4) {
+  const base = (name: string) => name.split(' — ')[0].trim();
+  const pool = inCategory(categoryId).sort((a, b) => (a.featured ?? 99) - (b.featured ?? 99));
+  const picked: ProductRecord[] = [];
+  const seen = new Set<string>();
+  for (const p of pool) {
+    if (seen.has(base(p.name))) continue;
+    seen.add(base(p.name));
+    picked.push(p);
+    if (picked.length === n) return picked;
+  }
+  for (const p of pool) {
+    if (picked.length === n) break;
+    if (!picked.includes(p)) picked.push(p);
+  }
+  return picked;
+}
+
+/** Distinct products (one per product type) from a list, skipping excluded ids. */
+export function distinct(list: ProductRecord[], n: number, exclude: Set<string> = new Set()) {
+  const base = (name: string) => name.split(' — ')[0].trim();
+  const seen = new Set<string>();
+  const out: ProductRecord[] = [];
+  for (const p of list) {
+    if (exclude.has(p.id) || seen.has(base(p.name))) continue;
+    seen.add(base(p.name));
+    out.push(p);
+    if (out.length === n) break;
+  }
+  return out;
 }
 
 export function collectionStats() {

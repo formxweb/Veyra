@@ -48,7 +48,9 @@ export default function CatalogBrowser({ items, categories, brands, lockedCatego
   // Initialise from the URL once (shareable, back-button friendly filters).
   useEffect(() => {
     const p = readParams();
-    setQ(p.q);
+    // Keep anything typed before hydration finished.
+    const typed = (document.getElementById('catalog-q') as HTMLInputElement | null)?.value ?? '';
+    setQ(p.q || typed);
     if (!lockedCategory && categories.some((c) => c.id === p.cat)) setCat(p.cat);
     if (brands.some((b) => b.name === p.brand)) setBrand(p.brand);
     if (SORTS.some((s) => s.id === p.sort)) setSort(p.sort);

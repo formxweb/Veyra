@@ -6,12 +6,42 @@ import Featured from '../components/home/Featured.astro';
 import BrandStory from '../components/home/BrandStory.astro';
 import Trust from '../components/home/Trust.astro';
 import Process from '../components/home/Process.astro';
+import { distinct, featured, inCategory, products, views } from '../data/catalog';
+import { collectionById } from '../data/collections';
+
+// The hero shows the first six featured products; the rails below show others.
+const inHero = new Set(featured(6).map((p) => p.id));
+const hair = collectionById.get('sac-bakim')!;
+const hairItems = await views(distinct(inCategory('sac-bakim'), 8, inHero));
+const budget = await views(
+  distinct(
+    products.filter((p) => p.price != null && p.price < 2000).sort((a, b) => (a.price ?? 0) - (b.price ?? 0)),
+    8,
+    inHero,
+  ),
+);
 ---
 
 <BaseLayout transparentHeader>
   <Hero />
   <CollectionsIndex />
-  <Featured />
+  <Featured
+    id="rail-hair"
+    eyebrow={hair.title}
+    title="Şekillendirme, düzleştirme <em>ve kurutma.</em>"
+    lede="Seçkinin en geniş koleksiyonu: Dyson şekillendirme setleri, düzleştiriciler ve kurutma makineleri."
+    items={hairItems}
+    cta={{ href: `/koleksiyon/${hair.slug}`, label: `${hair.title} — tümü` }}
+  />
+  <Featured
+    id="rail-budget"
+    eyebrow="2.000 ₺ altı"
+    title="Gündelik kullanım için <em>uygun fiyatlı</em> seçimler."
+    lede="Termos bardaklar, mataralar ve taraftar serileri. Hediye için de pratik."
+    items={budget}
+    cta={{ href: '/magaza?sirala=fiyat-artan', label: 'Fiyata göre sırala' }}
+    tone="ivory"
+  />
   <BrandStory />
   <Trust />
   <Process />

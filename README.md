@@ -21,11 +21,13 @@ WhatsApp üzerinden ilerler, ödeme EFT / Havale ile alınır; sitede kart bilgi
 | `npm run test:e2e` | Uçtan uca testler (önce `npm run build`) |
 | `npm run catalog:check` | Katalogda eksik/hatalı veriyi raporlar |
 | `npm run catalog:report` | `docs/KATALOG.md` kontrol listesini yeniden üretir |
-| `npm run art` | Atmosfer görsellerini (`src/assets/art`) yeniden üretir |
+| `npm run photos:import -- <klasör>` | Orijinal ürün fotoğraflarını içe aktarır (aşağıya bakın) |
+| `npm run og` | Sosyal medya paylaşım görselini ürün fotoğraflarından yeniden üretir |
 
 ## Yayına alma
 
-`dist/` klasörü herhangi bir statik barındırmada (Netlify, Vercel, Cloudflare Pages, cPanel vb.) çalışır.
+Site Vercel’de yayında (`veyra` projesi, https://veyra-sooty.vercel.app). Depoya gönderilen her değişiklik otomatik olarak
+yeniden yayınlanır. `dist/` klasörü başka bir statik barındırmada da (Netlify, Cloudflare Pages, cPanel vb.) çalışır.
 Alan adını derleme sırasında verin; kanonik adresler, Open Graph görselleri ve site haritası buna göre oluşur:
 
 ```bash
@@ -44,13 +46,13 @@ src/
   data/collections.ts     Koleksiyonlar (editoryal başlık, açıklama, kapak görseli)
   data/catalog.ts         Derleme anında katalog erişimi ve görsel çözümleme
   assets/products/        Ürün fotoğrafları
-  assets/art/             Özgün atmosfer görselleri (kodla üretilir, bkz. scripts/art)
+  assets/og/              Sosyal medya paylaşım görseli
   components/             Astro bileşenleri (header, footer, ana sayfa bölümleri)
   islands/                Etkileşimli Preact bileşenleri (sepet, arama, katalog, galeri, formlar)
   stores/                 Sepet / favori / arayüz durumu (localStorage’da saklanır)
   styles/                 Tasarım token’ları ve bileşen stilleri
   pages/                  Sayfalar (/, /magaza, /koleksiyon/*, /urun/*, /sepet, /favoriler, /iletisim, /yardim)
-scripts/                  Katalog kontrolü, rapor, görsel üretimi, Gardrops ekran görüntüsü içe aktarımı
+scripts/                  Katalog kontrolü, rapor, fotoğraf içe aktarımı, paylaşım görseli, Gardrops ekran görüntüsü içe aktarımı
 tests/                    Playwright testleri
 docs/KATALOG.md           Ürün bazında eksik bilgi listesi
 ```
@@ -77,10 +79,16 @@ Her ürün `src/data/products.json` içinde bir kayıttır:
 }
 ```
 
-**Fotoğraf eklemek:** Orijinal fotoğrafı `src/assets/products/` klasörüne koyun (ör. `vr-001-2.jpg`) ve `images` dizisine ekleyin.
-Birden fazla görsel eklendiğinde ürün sayfası galerisi otomatik olarak oklar, küçük görseller ve kaydırma kazanır. Büyük
-fotoğraflar derlemede otomatik küçültülür ve WebP’ye çevrilir. Fotoğraf yüksek çözünürlüklü olduğunda `"quality": "interim-lowres"`
-işaretini kaldırın.
+**Fotoğraf eklemek:** Fotoğrafları bir klasöre ürün koduyla adlandırarak koyun (`vr-001.jpg` ana görsel, `vr-001-2.jpg`
+ikinci görsel …) ve çalıştırın:
+
+```bash
+npm run photos:import -- ./fotograflar
+```
+
+Betik fotoğrafları döndürür, en fazla 2000 px’e küçültür, ara (düşük çözünürlüklü) görselleri siler ve `products.json`’u
+günceller. Orijinal fotoğrafı olan ürünlerde kartlar ve galeri otomatik olarak çerçevesiz, tam boy gösterime geçer; birden
+fazla fotoğraf varsa galeri ok, küçük görsel ve kaydırma kazanır.
 
 **Tükenen ürün:** `"availability": "sold_out"` → kartta ve ürün sayfasında sepete ekleme kapanır.
 
@@ -92,8 +100,7 @@ Site, doğrulanmamış bilgi göstermemek üzere kurulmuştur:
   fotoğraf, stok adedi) uydurulmadı; ayrıntılı liste için **[docs/KATALOG.md](docs/KATALOG.md)**.
 - Kargo ücreti, teslim süresi, IBAN, garanti veya “orijinal ürün” gibi teyit edilmemiş ifadeler sitede yer almaz.
   Bunlar onaylandığında `src/config/site.ts` üzerinden eklenebilir.
-- Hero ve koleksiyon görselleri ürün fotoğrafı değildir; `scripts/art` altındaki kodla üretilmiş özgün atmosfer
-  görselleridir (stok fotoğraf veya üçüncü taraf görseli kullanılmadı).
+- Sitede stok fotoğraf veya üçüncü taraf görseli kullanılmaz; tüm görseller mağazanın kendi ürün fotoğraflarıdır.
 
 ## Henüz eksik olanlar (mağaza sahibinden gerekenler)
 

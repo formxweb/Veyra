@@ -73,7 +73,7 @@ const description = `${p.name}${p.brand ? ` (${p.brand})` : ''} — ${formatPric
 
     <div class="pdp__grid">
       <div class="pdp__media">
-        <ProductGallery client:load images={d.gallery} name={p.name} category={p.category} />
+        <ProductGallery client:load images={d.gallery} name={p.name} category={p.category} hires={d.hires} />
       </div>
 
       <div class="pdp__info">
@@ -87,6 +87,21 @@ const description = `${p.name}${p.brand ? ` (${p.brand})` : ''} — ${formatPric
         </ul>
 
         <ProductPurchase client:load p={d} />
+
+        <section class="pdp__specs" aria-labelledby="spec-title">
+          <h2 id="spec-title" class="pdp__specs-title">Ürün bilgileri</h2>
+          <dl>
+            {p.brand && (<div><dt>Marka</dt><dd>{p.brand}</dd></div>)}
+            <div><dt>Koleksiyon</dt><dd><a href={`/koleksiyon/${c.slug}`}>{c.title}</a></dd></div>
+            {p.condition && (<div><dt>Durum</dt><dd>{p.condition}</dd></div>)}
+            <div><dt>Ürün kodu</dt><dd>{p.id.toUpperCase()}</dd></div>
+            <div><dt>Fiyat</dt><dd>{formatPrice(p.price)}</dd></div>
+            <div><dt>Kargo</dt><dd>Türkiye’nin 81 iline · {brand.location.label}’den gönderim</dd></div>
+            <div><dt>Ödeme</dt><dd>{brand.payment.label} · IBAN sipariş onayında iletilir</dd></div>
+            <div><dt>Sipariş</dt><dd>Sepet veya WhatsApp · {brand.whatsapp.display}</dd></div>
+            {p.features.map((f) => (<div><dt>Özellik</dt><dd>{f}</dd></div>))}
+          </dl>
+        </section>
 
         <div class="acc pdp__acc">
           <details open>
@@ -109,27 +124,6 @@ const description = `${p.name}${p.brand ? ` (${p.brand})` : ''} — ${formatPric
                   </>
                 )
               }
-              {
-                p.features.length > 0 && (
-                  <ul class="pdp__features">
-                    {p.features.map((f) => (
-                      <li>{f}</li>
-                    ))}
-                  </ul>
-                )
-              }
-            </div>
-          </details>
-          <details>
-            <summary>Ürün bilgileri <Icon name="plus" /></summary>
-            <div class="acc__body">
-              <dl class="spec">
-                {p.brand && (<><dt>Marka</dt><dd>{p.brand}</dd></>)}
-                <dt>Koleksiyon</dt><dd><a href={`/koleksiyon/${c.slug}`}>{c.title}</a></dd>
-                {p.condition && (<><dt>Durum</dt><dd>{p.condition}</dd></>)}
-                <dt>Ürün kodu</dt><dd>{p.id.toUpperCase()}</dd>
-                <dt>Fiyat</dt><dd>{formatPrice(p.price)} · kargo ücreti sipariş onayında iletilir</dd>
-              </dl>
             </div>
           </details>
           <details>
@@ -254,13 +248,45 @@ const description = `${p.name}${p.brand ? ` (${p.brand})` : ''} — ${formatPric
     box-shadow: 0 0 0 3px rgb(61 90 69 / 0.15);
   }
 
-  .pdp__acc {
+  .pdp__specs {
     margin-top: var(--s-4);
   }
 
-  .pdp__features {
-    margin-top: var(--s-3);
-    padding-left: 1.1rem;
+  .pdp__specs-title {
+    margin-bottom: var(--s-3);
+    font-family: var(--font-sans);
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .pdp__specs dl {
+    display: grid;
+    border-top: 1px solid var(--line);
+    font-size: var(--fs-sm);
+  }
+
+  .pdp__specs dl > div {
+    display: grid;
+    grid-template-columns: 7.5rem 1fr;
+    gap: var(--s-4);
+    padding-block: 0.7rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .pdp__specs dt {
+    color: var(--muted);
+  }
+
+  .pdp__specs dd a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--line-strong);
+  }
+
+  .pdp__acc {
+    margin-top: var(--s-2);
   }
 
   .pdp__related {

@@ -28,8 +28,16 @@ test.describe('home', () => {
     await page.goto('/');
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Özenle seçilir.');
     await expect(page.locator('#koleksiyonlar')).toBeVisible();
-    await page.locator('.feat').scrollIntoViewIfNeeded();
-    await expect(page.locator('.feat .pcard').first()).toBeVisible();
+    await expect(page.locator('.hero__tile')).toHaveCount(6);
+    for (const id of ['#rail-hair', '#rail-budget']) {
+      const rail = page.locator('section', { has: page.locator(id) });
+      await rail.scrollIntoViewIfNeeded();
+      await expect(rail.locator('.pcard').first()).toBeVisible();
+    }
+    // the two rails never repeat what the hero already shows
+    const heroHrefs = await page.locator('.hero__tile a').evaluateAll((as) => as.map((a) => a.getAttribute('href')));
+    const railHrefs = await page.locator('.feat .pcard__name a').evaluateAll((as) => as.map((a) => a.getAttribute('href')));
+    expect(railHrefs.filter((h) => heroHrefs.includes(h))).toEqual([]);
     expect(errors).toEqual([]);
   });
 
@@ -82,6 +90,7 @@ test.describe('catalog', () => {
 
   test('Turkish-insensitive search', async ({ page }) => {
     await page.goto('/magaza');
+    await page.locator('.catalog[data-ready]').waitFor();
     await page.getByPlaceholder('Ürün veya marka ara').fill('saç düzleştirici');
     const a = await page.locator('.pgrid .pcard').count();
     await page.getByPlaceholder('Ürün veya marka ara').fill('SAC DUZLESTIRICI');

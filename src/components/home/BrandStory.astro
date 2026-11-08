@@ -1,10 +1,9 @@
 ---
-import { getImage } from 'astro:assets';
-import story from '../../assets/art/story-dark.jpg';
 import { brand } from '../../config/site';
+import { brandsWithCounts, catalogMeta } from '../../data/catalog';
+import Icon from '../ui/Icon.astro';
 
-const img = await getImage({ src: story, widths: [480, 720, 1000, 1400], format: 'webp', quality: 72 });
-
+const brands = brandsWithCounts();
 const pillars = [
   {
     n: 'I',
@@ -25,94 +24,78 @@ const pillars = [
 ---
 
 <section id="hikaye" class="story on-ink" aria-labelledby="story-title">
-  <div class="story__grid">
-    <figure class="story__art">
-      <img
-        src={img.src}
-        srcset={img.srcSet.attribute}
-        sizes="(min-width: 64em) 46vw, 100vw"
-        width={story.width}
-        height={story.height}
-        alt=""
-        loading="lazy"
-        decoding="async"
-      />
-    </figure>
-    <div class="story__text">
+  <div class="container story__grid">
+    <div class="story__intro">
       <p class="eyebrow eyebrow--rule" data-reveal>VEYRA Hakkında</p>
       <h2 id="story-title" class="story__title" data-reveal style="--reveal-i:1">
         Kalite, güven ve uygun fiyat — <em>aynı cümlede.</em>
       </h2>
       <p class="lede story__lede" data-reveal style="--reveal-i:2">
         {brand.legalName}, {brand.location.label}’den Türkiye’nin 81 iline ulaşan butik bir mağaza. Saç bakım teknolojilerinden
-        mutfak klasiklerine, termoslardan saatlere uzanan seçkimizi tek bir ilkeyle kuruyoruz: doğru ürünü, doğru fiyatla,
-        güvenle ulaştırmak.
+        mutfak klasiklerine, termoslardan saatlere uzanan {catalogMeta.total} ürünlük seçkimizi tek bir ilkeyle kuruyoruz: doğru
+        ürünü, doğru fiyatla, güvenle ulaştırmak.
       </p>
-      <ol class="story__pillars" role="list">
-        {
-          pillars.map((p, i) => (
-            <li data-reveal style={`--reveal-i:${i + 3}`}>
-              <span class="story__n">{p.n}</span>
-              <h3>{p.t}</h3>
-              <p>{p.d}</p>
-            </li>
-          ))
-        }
-      </ol>
     </div>
+    <ol class="story__pillars" role="list">
+      {
+        pillars.map((p, i) => (
+          <li data-reveal style={`--reveal-i:${i + 2}`}>
+            <span class="story__n">{p.n}</span>
+            <h3>{p.t}</h3>
+            <p>{p.d}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+
+  <div class="container story__brands" data-reveal>
+    <p class="eyebrow">Seçkideki markalar</p>
+    <ul role="list">
+      {
+        brands.map((b) => (
+          <li>
+            <a href={`/magaza?marka=${encodeURIComponent(b.name)}`}>
+              <span class="story__brand">{b.name}</span>
+              <span class="num story__count">{b.count} ürün</span>
+            </a>
+          </li>
+        ))
+      }
+      <li>
+        <a href="/magaza">
+          <span class="story__brand story__brand--all">Tümü</span>
+          <span class="num story__count">
+            {catalogMeta.total} ürün <Icon name="arrow-right" />
+          </span>
+        </a>
+      </li>
+    </ul>
   </div>
 </section>
 
 <style>
   .story {
-    overflow: hidden;
+    padding-block: var(--section);
   }
 
   .story__grid {
     display: grid;
+    gap: var(--s-7);
   }
 
   @media (min-width: 64em) {
     .story__grid {
-      grid-template-columns: minmax(0, 46fr) minmax(0, 54fr);
-      min-height: 52rem;
+      grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+      gap: var(--s-9);
+      align-items: start;
     }
   }
 
-  .story__art {
-    position: relative;
-    aspect-ratio: 4 / 5;
-    max-height: 80svh;
-    width: 100%;
-  }
-
-  @media (min-width: 64em) {
-    .story__art {
-      aspect-ratio: auto;
-      max-height: none;
-    }
-  }
-
-  .story__art img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 50% 62%;
-  }
-
-  .story__text {
+  .story__intro {
     display: grid;
-    align-content: center;
     gap: var(--s-5);
-    padding: var(--section) var(--gutter);
-  }
-
-  @media (min-width: 64em) {
-    .story__text {
-      padding-inline: var(--s-9) max(var(--gutter), calc((100vw - var(--container)) / 2 + var(--gutter)));
-    }
+    align-content: start;
   }
 
   .story__title {
@@ -121,13 +104,11 @@ const pillars = [
   }
 
   .story__lede {
-    max-width: 44ch;
+    max-width: 46ch;
   }
 
   .story__pillars {
     display: grid;
-    gap: 0;
-    margin-top: var(--s-5);
     border-top: 1px solid var(--line);
   }
 
@@ -157,5 +138,65 @@ const pillars = [
     font-size: var(--fs-sm);
     color: var(--muted-on-ink);
     max-width: 46ch;
+  }
+
+  .story__brands {
+    display: grid;
+    gap: var(--s-4);
+    margin-top: var(--s-8);
+  }
+
+  .story__brands ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid var(--line);
+  }
+
+  @media (min-width: 48em) {
+    .story__brands ul {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 75em) {
+    .story__brands ul {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+  }
+
+  .story__brands a {
+    display: grid;
+    gap: 0.2rem;
+    padding: var(--s-5) var(--s-3) var(--s-5) 0;
+    border-bottom: 1px solid var(--line);
+    transition: color var(--dur-2);
+  }
+
+  .story__brand {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 1.2rem + 0.7vw, 1.9rem);
+    font-weight: 330;
+    line-height: 1.1;
+  }
+
+  .story__brand--all {
+    font-style: italic;
+  }
+
+  .story__count {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s-2);
+    font-size: var(--fs-xs);
+    color: var(--muted-on-ink);
+  }
+
+  .story__count :global(.icon) {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+
+  .story__brands a:hover .story__brand {
+    color: var(--champagne-soft);
   }
 </style>

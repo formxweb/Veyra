@@ -1,0 +1,70 @@
+---
+import type { ProductView } from '../../lib/types';
+
+interface Props {
+  items: ProductView[];
+  /** Image sizes hint for one tile. */
+  sizes?: string;
+  eager?: boolean;
+  class?: string;
+}
+const { items, sizes = '160px', eager = false, class: cls } = Astro.props;
+---
+
+<div class:list={['mosaic', cls]} data-count={items.length} aria-hidden="true">
+  {
+    items.map((p) => (
+      <span class="mosaic__cell" data-cat={p.category}>
+        {p.image && (
+          <span class="pcard__print" style={`--ar:${p.image.width} / ${p.image.height}`}>
+            <img
+              src={p.image.src}
+              srcset={p.image.srcset}
+              sizes={sizes}
+              width={p.image.width}
+              height={p.image.height}
+              alt=""
+              loading={eager ? 'eager' : 'lazy'}
+              decoding="async"
+            />
+          </span>
+        )}
+      </span>
+    ))
+  }
+</div>
+
+<style>
+  .mosaic {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    aspect-ratio: 4 / 5;
+    background: var(--line);
+    overflow: hidden;
+  }
+
+  .mosaic[data-count='1'] {
+    grid-template-columns: 1fr;
+  }
+
+  .mosaic[data-count='3'] .mosaic__cell:first-child {
+    grid-row: span 2;
+  }
+
+  .mosaic__cell {
+    position: relative;
+    display: grid;
+    place-items: center;
+    padding: 12%;
+    background: var(--mat);
+    overflow: hidden;
+  }
+
+  .mosaic__cell :global(.pcard__print) {
+    max-height: 100%;
+    max-width: 100%;
+    height: 100%;
+    width: auto;
+  }
+</style>

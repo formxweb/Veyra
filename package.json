@@ -10,9 +10,10 @@
     "preview": "astro preview",
     "catalog:check": "node scripts/catalog-check.mjs",
     "catalog:report": "node scripts/catalog-report.mjs",
-    "art": "node scripts/render-art.mjs",
     "test:e2e": "playwright test --trace off",
-    "astro": "astro"
+    "astro": "astro",
+    "og": "node scripts/render-og.mjs",
+    "photos:import": "node scripts/import-photos.mjs"
   },
   "dependencies": {
     "@astrojs/preact": "^6.1.2",

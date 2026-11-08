@@ -20,6 +20,8 @@ export interface ProductView {
   condition: string | null;
   available: boolean;
   image: ImageView | null;
+  /** False while the product only has an interim low-resolution photo. */
+  hires: boolean;
   /** Lower-cased, diacritic-folded haystack for instant search. */
   search: string;
   featured: number | null;

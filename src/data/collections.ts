@@ -11,7 +11,6 @@ export interface Collection {
   label: string;
   kicker: string;
   intro: string;
-  art: string;
 }
 
 export const collections: Collection[] = [
@@ -23,7 +22,6 @@ export const collections: Collection[] = [
     kicker: 'Şekillendirme · Düzleştirme · Kurutma',
     intro:
       'Şekillendirme setleri, saç düzleştiriciler ve kurutma makineleri. Salon sonucunu evin sakinliğine taşıyan araçlar, tek bir seçkide.',
-    art: 'cover-ritual',
   },
   {
     id: 'termos',
@@ -33,7 +31,6 @@ export const collections: Collection[] = [
     kicker: 'Saplı bardaklar · Mataralar · Taraftar serileri',
     intro:
       'Gün boyu yanınızda: saplı termos bardaklar, klasik mataralar ve takım renklerinde taraftar serileri. Renk seçenekleriyle.',
-    art: 'cover-carry',
   },
   {
     id: 'mutfak',
@@ -43,7 +40,6 @@ export const collections: Collection[] = [
     kicker: 'Retro formlar · Gündelik ritüeller',
     intro:
       'Retro su ısıtıcılar, standlı bıçak setleri, stand mikserler ve Türk kahvesi makinesi. Tezgâhta göz önünde durmak için tasarlanmış parçalar.',
-    art: 'cover-dwell',
   },
   {
     id: 'saat-parfum',
@@ -52,7 +48,6 @@ export const collections: Collection[] = [
     label: 'Saat & Parfüm',
     kicker: 'Son dokunuş',
     intro: 'Kol saatleri ve parfüm setleri. Bir görünümü tamamlayan, hediye için de doğru seçimler.',
-    art: 'cover-nocturne',
   },
   {
     id: 'ev-teknolojisi',
@@ -62,7 +57,6 @@ export const collections: Collection[] = [
     kicker: 'Süpürge · Robot süpürge · Hava temizleme',
     intro:
       'Kablosuz ve robot süpürgeler, Wi-Fi bağlantılı hava temizleyici. Evi sessizce düzende tutan teknoloji.',
-    art: 'cover-signal',
   },
   {
     id: 'kisisel-bakim',
@@ -71,7 +65,6 @@ export const collections: Collection[] = [
     label: 'Kişisel Bakım',
     kicker: 'IPL epilasyon',
     intro: 'Evde kullanım için IPL epilasyon cihazları ve setleri. Kendinize ayırdığınız zaman için.',
-    art: 'cover-glow',
   },
   {
     id: 'elektronik',
@@ -80,7 +73,6 @@ export const collections: Collection[] = [
     label: 'Elektronik',
     kicker: 'Drone · Tablet · Projeksiyon',
     intro: 'Kameralı drone setleri, klavyeli tablet ve projeksiyon cihazı. Hem iş hem keyif için.',
-    art: 'cover-orbit',
   },
 ];
 
