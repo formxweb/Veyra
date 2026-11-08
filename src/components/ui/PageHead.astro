@@ -1,0 +1,73 @@
+---
+interface Crumb {
+  href?: string;
+  label: string;
+}
+interface Props {
+  eyebrow?: string;
+  title: string;
+  lede?: string;
+  crumbs?: Crumb[];
+  compact?: boolean;
+}
+const { eyebrow, title, lede, crumbs = [], compact = false } = Astro.props;
+---
+
+<header class:list={['phead', { 'phead--compact': compact }]}>
+  <div class="container">
+    {
+      crumbs.length > 0 && (
+        <nav class="crumbs" aria-label="Konum">
+          <ol role="list">
+            <li>
+              <a href="/">Ana Sayfa</a>
+            </li>
+            {crumbs.map((c) => (
+              <li>{c.href ? <a href={c.href}>{c.label}</a> : <span aria-current="page">{c.label}</span>}</li>
+            ))}
+          </ol>
+        </nav>
+      )
+    }
+    {eyebrow && <p class="eyebrow eyebrow--rule">{eyebrow}</p>}
+    <h1 class="phead__title" set:html={title} />
+    {lede && <p class="lede">{lede}</p>}
+    <slot />
+  </div>
+</header>
+
+<style>
+  .phead {
+    padding-block: var(--s-7) var(--s-6);
+  }
+
+  @media (max-width: 47.99em) {
+    .phead {
+      padding-block: var(--s-5) var(--s-5);
+    }
+
+    .phead .container {
+      gap: var(--s-3);
+    }
+  }
+
+  .phead .container {
+    display: grid;
+    gap: var(--s-4);
+    justify-items: start;
+  }
+
+  .phead__title {
+    font-size: var(--fs-1);
+    max-width: 18ch;
+  }
+
+  .phead--compact .phead__title {
+    font-size: var(--fs-2);
+  }
+
+  .phead .lede {
+    max-width: 52ch;
+  }
+
+</style>

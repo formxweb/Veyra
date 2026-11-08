@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHead from '../components/ui/PageHead.astro';
+import FavoritesView from '../islands/FavoritesView';
+import { products, views } from '../data/catalog';
+
+const all = await views(products);
+---
+
+<BaseLayout title="Favoriler" description="VEYRA TİCARET’te beğendiğiniz ürünler." noindex>
+  <PageHead compact eyebrow="Favoriler" title="Beğendikleriniz" crumbs={[{ label: 'Favoriler' }]} />
+  <div class="container" style="padding-bottom: var(--section)">
+    <FavoritesView client:load products={all} />
+  </div>
+</BaseLayout>

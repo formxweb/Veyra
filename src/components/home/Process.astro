@@ -1,0 +1,128 @@
+---
+import { brand } from '../../config/site';
+import { waLink } from '../../lib/whatsapp';
+import Icon from '../ui/Icon.astro';
+
+const steps = [
+  { t: 'Seçin', d: 'Beğendiğiniz ürünleri sepetinize ekleyin. Adetleri dilediğiniz gibi düzenleyebilirsiniz.' },
+  { t: 'Gönderin', d: 'Teslimat bilgilerinizi yazın; siparişiniz hazır bir WhatsApp mesajına dönüşür, tek dokunuşla iletirsiniz.' },
+  { t: 'Ödeyin', d: `Onayla birlikte IBAN bilgisini paylaşırız; ödemenizi ${brand.payment.label} ile yaparsınız.` },
+  { t: 'Teslim alın', d: 'Siparişiniz kargoya verilir ve Türkiye’nin 81 iline ulaşır.' },
+];
+---
+
+<section class="section process" aria-labelledby="process-title">
+  <div class="container process__grid">
+    <div class="process__intro" data-reveal>
+      <p class="eyebrow eyebrow--rule">Nasıl Sipariş Verilir</p>
+      <h2 id="process-title" class="process__title">Dört adım, <em>tek muhatap.</em></h2>
+      <p class="lede">Kart bilgisi yok, karmaşık üyelik yok. Siparişiniz baştan sona doğrudan bizimle ilerler.</p>
+      <a class="btn btn--outline" href="/yardim">Sipariş &amp; Kargo Bilgileri <Icon name="arrow-right" class="icon icon--arrow" /></a>
+    </div>
+    <ol class="process__steps" role="list">
+      {
+        steps.map((s, i) => (
+          <li data-reveal style={`--reveal-i:${i}`}>
+            <span class="process__n">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{s.t}</h3>
+            <p>{s.d}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
+
+<section class="closing" aria-labelledby="closing-title">
+  <div class="container closing__inner" data-reveal>
+    <h2 id="closing-title" class="closing__title">Aradığınız ürün seçkide <em>yok mu?</em></h2>
+    <p class="lede">Bize yazın; stok durumunu sizin için kontrol edelim.</p>
+    <a class="btn" href={waLink('Merhaba VEYRA, sitede göremediğim bir ürünü soracaktım:')} target="_blank" rel="noopener">
+      <Icon name="whatsapp" /> WhatsApp’tan Sorun
+    </a>
+  </div>
+</section>
+
+<style>
+  .process__grid {
+    display: grid;
+    gap: var(--s-8);
+  }
+
+  @media (min-width: 64em) {
+    .process__grid {
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+      align-items: start;
+    }
+
+    .process__intro {
+      position: sticky;
+      top: calc(var(--header-h) + var(--s-6));
+    }
+  }
+
+  .process__intro {
+    display: grid;
+    gap: var(--s-5);
+    justify-items: start;
+  }
+
+  .process__title {
+    font-size: var(--fs-2);
+  }
+
+  .process__steps {
+    display: grid;
+    border-top: 1px solid var(--line);
+  }
+
+  .process__steps li {
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    gap: var(--s-2) var(--s-5);
+    padding-block: var(--s-6);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .process__n {
+    grid-row: span 2;
+    font-family: var(--font-display);
+    font-size: var(--fs-3);
+    font-weight: 300;
+    color: var(--stone-400);
+    line-height: 1;
+  }
+
+  .process__steps h3 {
+    font-size: var(--fs-3);
+    font-weight: 350;
+    line-height: 1;
+  }
+
+  .process__steps p {
+    color: var(--muted);
+    max-width: 44ch;
+  }
+
+  .closing {
+    padding-block: var(--section);
+    text-align: center;
+    background: var(--stone-100);
+    border-top: 1px solid var(--line);
+  }
+
+  .closing__inner {
+    display: grid;
+    justify-items: center;
+    gap: var(--s-5);
+  }
+
+  .closing__title {
+    font-size: var(--fs-1);
+    max-width: 16ch;
+  }
+
+  .closing .lede {
+    max-width: 36ch;
+  }
+</style>

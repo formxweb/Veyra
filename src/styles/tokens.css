@@ -1,0 +1,116 @@
+/* ==========================================================================
+   VEYRA — design tokens
+   Palette: deep warm black · warm ivory · stone beige · restrained champagne.
+   Champagne is an accent of last resort: one detail per view, never a line
+   around everything.
+   ========================================================================== */
+:root {
+  /* colour — base */
+  --ink: #12110f;
+  --ink-2: #1d1b18;
+  --ink-3: #2b2824;
+  --ink-soft: #4a453f;
+  --ivory: #f4efe6;
+  --paper: #faf7f1;
+  --stone-50: #efe9df;
+  --stone-100: #e9e2d6;
+  --stone-200: #ddd3c3;
+  --stone-300: #cbbda8;
+  --stone-400: #ac9b83;
+  --stone-600: #786a58;
+  --muted: #655c52;          /* 5.6:1 on ivory */
+  --muted-on-ink: #b4aa9c;   /* 7.9:1 on ink  */
+  --champagne: #b39a6b;
+  --champagne-soft: #d9c8a2;
+  --champagne-metal: linear-gradient(115deg, #8f7650 0%, #d8c59c 38%, #f1e6c8 50%, #c4ab7c 64%, #8a7049 100%);
+  --danger: #8f3a2b;
+  --success: #3d5a45;
+
+  --line: rgb(18 17 15 / 0.11);
+  --line-strong: rgb(18 17 15 / 0.22);
+  --line-on-ink: rgb(244 239 230 / 0.14);
+
+  /* surfaces */
+  --bg: var(--ivory);
+  --surface: var(--paper);
+  --mat: var(--stone-100);
+  --fg: var(--ink);
+
+  /* typography */
+  --font-display: 'Fraunces Variable', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --font-sans: 'Hanken Grotesk Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --fs-hero: clamp(3.1rem, 1.2rem + 6.4vw, 8.25rem);
+  --fs-1: clamp(2.5rem, 1.55rem + 3.4vw, 5rem);
+  --fs-2: clamp(2rem, 1.45rem + 2.1vw, 3.5rem);
+  --fs-3: clamp(1.4rem, 1.2rem + 0.75vw, 1.9rem);
+  --fs-4: 1.25rem;
+  --fs-lg: 1.125rem;
+  --fs-md: 1rem;
+  --fs-sm: 0.875rem;
+  --fs-xs: 0.75rem;
+  --fs-2xs: 0.6875rem;
+
+  --lh-tight: 1.02;
+  --lh-snug: 1.18;
+  --lh-body: 1.6;
+
+  --track-eyebrow: 0.18em;
+  --track-button: 0.14em;
+
+  /* spacing — 4/8 rhythm */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+  --s-8: 4rem;
+  --s-9: 6rem;
+  --s-10: 8rem;
+  --section: clamp(4.5rem, 2.75rem + 6vw, 9.5rem);
+
+  /* layout */
+  --container: 1440px;
+  --gutter: clamp(1rem, 0.4rem + 2.6vw, 3rem);
+  --header-h: 4.25rem;
+  --bar-h: 2.25rem;
+  --radius: 2px;
+
+  /* elevation — borders first, then soft shadow */
+  --shadow-print: 0 1px 1px rgb(30 22 14 / 0.08), 0 10px 24px -14px rgb(30 22 14 / 0.38);
+  --shadow-print-hover: 0 2px 2px rgb(30 22 14 / 0.08), 0 22px 40px -18px rgb(30 22 14 / 0.45);
+  --shadow-panel: 0 30px 80px -30px rgb(18 17 15 / 0.45);
+
+  /* motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+  --dur-1: 160ms;
+  --dur-2: 280ms;
+  --dur-3: 560ms;
+  --dur-4: 1100ms;
+
+  --z-header: 40;
+  --z-sticky: 45;
+  --z-overlay: 60;
+  --z-toast: 80;
+
+  color-scheme: light;
+}
+
+@media (min-width: 64em) {
+  :root {
+    --header-h: 5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-1: 0ms;
+    --dur-2: 0ms;
+    --dur-3: 0ms;
+    --dur-4: 0ms;
+  }
+}

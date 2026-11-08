@@ -1,0 +1,125 @@
+---
+import '@fontsource-variable/fraunces/opsz.css';
+import '@fontsource-variable/fraunces/opsz-italic.css';
+import '@fontsource-variable/hanken-grotesk/wght.css';
+import '../styles/tokens.css';
+import '../styles/base.css';
+import '../styles/components.css';
+import '../styles/islands.css';
+
+import { getImage } from 'astro:assets';
+import { brand, navigation } from '../config/site';
+import { collectionStats } from '../data/catalog';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import GlobalUI from '../islands/GlobalUI';
+import ogDefault from '../assets/art/hero-desktop.jpg';
+import frauncesLatin from '@fontsource-variable/fraunces/files/fraunces-latin-opsz-normal.woff2?url';
+import hankenLatin from '@fontsource-variable/hanken-grotesk/files/hanken-grotesk-latin-wght-normal.woff2?url';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: ImageMetadata;
+  transparentHeader?: boolean;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  noindex?: boolean;
+  ogType?: 'website' | 'product';
+}
+
+const {
+  title,
+  description = brand.description,
+  image = ogDefault,
+  transparentHeader = false,
+  jsonLd,
+  noindex = false,
+  ogType = 'website',
+} = Astro.props;
+
+const fullTitle = title ? `${title} — VEYRA TİCARET` : 'VEYRA TİCARET — Özenle seçilir. Güvenle ulaşır.';
+const site = Astro.site;
+const canonical = site ? new URL(Astro.url.pathname, site).href : undefined;
+const og = await getImage({ src: image, width: 1200, height: 630, fit: 'cover', format: 'jpeg', quality: 82 });
+const ogUrl = site ? new URL(og.src, site).href : undefined;
+
+const shortcuts = collectionStats().map((c) => ({ href: `/koleksiyon/${c.slug}`, label: c.title, count: c.count }));
+const nav = navigation.map((n) => ({ href: n.href, label: n.label }));
+
+const orgLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Store',
+  name: brand.legalName,
+  description: brand.description,
+  telephone: brand.whatsapp.tel,
+  address: { '@type': 'PostalAddress', addressLocality: brand.location.district, addressRegion: brand.location.city, addressCountry: 'TR' },
+  paymentAccepted: 'EFT, Havale',
+  currenciesAccepted: 'TRY',
+  areaServed: { '@type': 'Country', name: 'Türkiye' },
+  ...(site ? { url: site.href } : {}),
+};
+const ld = [orgLd, ...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [])];
+---
+
+<!doctype html>
+<html lang="tr" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    {canonical && <link rel="canonical" href={canonical} />}
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <meta name="theme-color" content="#f4efe6" />
+    <link rel="preload" href={frauncesLatin} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={hankenLatin} as="font" type="font/woff2" crossorigin />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta property="og:site_name" content="VEYRA TİCARET" />
+    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    {ogUrl && <meta property="og:image" content={ogUrl} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <script is:inline>
+      document.documentElement.classList.replace('no-js', 'js');
+      if (/[?&](q|kategori|marka|sirala)=/.test(location.search)) document.documentElement.classList.add('has-query');
+    </script>
+    <script type="speculationrules" is:inline>
+      { "prerender": [{ "where": { "href_matches": "/*" }, "eagerness": "moderate" }] }
+    </script>
+    {ld.map((d) => <script type="application/ld+json" set:html={JSON.stringify(d)} />)}
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#icerik">İçeriğe geç</a>
+    <Header transparent={transparentHeader} />
+    <main id="icerik" tabindex="-1">
+      <slot />
+    </main>
+    <Footer />
+    <GlobalUI client:load nav={nav} shortcuts={shortcuts} />
+    <script>
+      // Reveal-on-scroll. Content is fully visible without JS (see base.css).
+      const els = document.querySelectorAll<HTMLElement>('[data-reveal]');
+      if ('IntersectionObserver' in window && els.length) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            for (const e of entries) {
+              if (e.isIntersecting) {
+                e.target.classList.add('is-in');
+                io.unobserve(e.target);
+              }
+            }
+          },
+          { rootMargin: '0px 0px -8% 0px', threshold: 0.08 },
+        );
+        els.forEach((el) => io.observe(el));
+      } else {
+        els.forEach((el) => el.classList.add('is-in'));
+      }
+    </script>
+  </body>
+</html>

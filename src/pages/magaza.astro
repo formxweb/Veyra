@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHead from '../components/ui/PageHead.astro';
+import CatalogBrowser from '../islands/CatalogBrowser';
+import { brandsWithCounts, collectionStats, products, views } from '../data/catalog';
+
+const items = await views(products);
+const categories = collectionStats().map((c) => ({ id: c.id, label: c.label, count: c.count }));
+const brands = brandsWithCounts();
+---
+
+<BaseLayout
+  title="Mağaza"
+  description={`VEYRA TİCARET seçkisindeki ${items.length} ürün: saç bakım, kişisel bakım, ev teknolojisi, mutfak, termos, saat ve parfüm. WhatsApp ile sipariş, 81 ile kargo.`}
+>
+  <PageHead
+    eyebrow="Mağaza"
+    title="Tüm <em>seçki</em>"
+    lede="Arayın, koleksiyona göre daraltın, fiyata göre sıralayın; siparişinizi WhatsApp’tan tamamlayın."
+    crumbs={[{ label: 'Mağaza' }]}
+  />
+  <CatalogBrowser client:load items={items} categories={categories} brands={brands} />
+  <div style="height: var(--section)"></div>
+</BaseLayout>

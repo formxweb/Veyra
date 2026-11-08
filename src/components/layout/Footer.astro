@@ -1,0 +1,202 @@
+---
+import { brand } from '../../config/site';
+import { collectionStats } from '../../data/catalog';
+import { waLink } from '../../lib/whatsapp';
+import Icon from '../ui/Icon.astro';
+
+const cols = collectionStats();
+const year = new Date().getFullYear();
+---
+
+<footer class="ftr on-ink">
+  <div class="container ftr__top">
+    <div class="ftr__statement">
+      <p class="eyebrow eyebrow--rule">VEYRA TİCARET</p>
+      <p class="display ftr__claim">Özenle seçilir.<br /><em>Güvenle</em> ulaşır.</p>
+    </div>
+    <div class="ftr__cta">
+      <p class="lede">Sorunuz mu var? Ürün, stok ve kargo için doğrudan bize yazın.</p>
+      <a class="btn btn--light" href={waLink('Merhaba VEYRA, bilgi almak istiyorum.')} target="_blank" rel="noopener">
+        <Icon name="whatsapp" />
+        {brand.whatsapp.display}
+      </a>
+    </div>
+  </div>
+
+  <div class="container ftr__grid">
+    <nav aria-labelledby="ftr-col-1">
+      <h2 id="ftr-col-1" class="ftr__h">Koleksiyonlar</h2>
+      <ul role="list">
+        {
+          cols.map((c) => (
+            <li>
+              <a href={`/koleksiyon/${c.slug}`}>
+                {c.title} <span class="num">{c.count}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <nav aria-labelledby="ftr-col-2">
+      <h2 id="ftr-col-2" class="ftr__h">Alışveriş</h2>
+      <ul role="list">
+        <li><a href="/magaza">Tüm Ürünler</a></li>
+        <li><a href="/favoriler">Favoriler</a></li>
+        <li><a href="/sepet">Sepet</a></li>
+        <li><a href="/yardim">Sipariş &amp; Kargo</a></li>
+        <li><a href="/yardim#odeme">Ödeme Bilgileri</a></li>
+      </ul>
+    </nav>
+    <div aria-labelledby="ftr-col-3">
+      <h2 id="ftr-col-3" class="ftr__h">İletişim</h2>
+      <ul role="list">
+        <li>
+          <a href={waLink()} target="_blank" rel="noopener">WhatsApp · {brand.whatsapp.display}</a>
+        </li>
+        <li><a href={`tel:${brand.whatsapp.tel}`}>Telefon · {brand.whatsapp.display}</a></li>
+        <li><span>{brand.location.district}, {brand.location.city}</span></li>
+        <li><a href="/iletisim">İletişim Formu</a></li>
+        <li>
+          <a href={brand.marketplaces.gardrops} target="_blank" rel="noopener">Gardrops mağazamız ↗</a>
+        </li>
+      </ul>
+    </div>
+    <div aria-labelledby="ftr-col-4">
+      <h2 id="ftr-col-4" class="ftr__h">Ödeme &amp; Kargo</h2>
+      <ul role="list" class="ftr__facts">
+        <li><Icon name="bank" /> {brand.payment.label}</li>
+        <li><Icon name="truck" /> {brand.shipping.label}</li>
+        <li><Icon name="lock" /> Sitede kart bilgisi istenmez</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container ftr__base">
+    <p>© {year} {brand.legalName}. Tüm hakları saklıdır.</p>
+    <p>{brand.location.district} · Türkiye</p>
+  </div>
+  <p class="ftr__mark" aria-hidden="true">VEYRA</p>
+</footer>
+
+<style>
+  .ftr {
+    position: relative;
+    overflow: hidden;
+    padding-top: var(--section);
+  }
+
+  .ftr__top {
+    display: grid;
+    gap: var(--s-7);
+    padding-bottom: var(--s-8);
+    border-bottom: 1px solid var(--line);
+  }
+
+  @media (min-width: 64em) {
+    .ftr__top {
+      grid-template-columns: 1.4fr 1fr;
+      align-items: end;
+    }
+  }
+
+  .ftr__claim {
+    margin-top: var(--s-5);
+    font-size: var(--fs-1);
+  }
+
+  .ftr__cta {
+    display: grid;
+    gap: var(--s-5);
+    justify-items: start;
+  }
+
+  .ftr__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--s-7) var(--s-5);
+    padding-block: var(--s-8);
+  }
+
+  @media (max-width: 47.99em) {
+    .ftr__grid > :nth-child(n + 3) {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (min-width: 64em) {
+    .ftr__grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  .ftr__h {
+    margin-bottom: var(--s-4);
+    font-family: var(--font-sans);
+    font-size: var(--fs-2xs);
+    font-weight: 600;
+    letter-spacing: var(--track-eyebrow);
+    text-transform: uppercase;
+    color: var(--muted-on-ink);
+  }
+
+  .ftr__grid ul {
+    display: grid;
+    gap: var(--s-2);
+    font-size: var(--fs-sm);
+  }
+
+  .ftr__grid a {
+    display: inline-flex;
+    gap: var(--s-2);
+    align-items: baseline;
+    padding-block: 0.2rem;
+    transition: color var(--dur-2);
+  }
+
+  .ftr__grid a .num {
+    font-size: var(--fs-2xs);
+    color: var(--muted-on-ink);
+  }
+
+  .ftr__grid a:hover {
+    color: var(--champagne-soft);
+  }
+
+  .ftr__facts li {
+    display: flex;
+    gap: var(--s-3);
+    align-items: center;
+  }
+
+  .ftr__facts :global(.icon) {
+    width: 1.1rem;
+    height: 1.1rem;
+    color: var(--muted-on-ink);
+  }
+
+  .ftr__base {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--s-3);
+    padding-block: var(--s-5);
+    border-top: 1px solid var(--line);
+    font-size: var(--fs-xs);
+    color: var(--muted-on-ink);
+  }
+
+  .ftr__mark {
+    margin: 0 0 -0.18em;
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: 27vw;
+    line-height: 0.8;
+    letter-spacing: 0.06em;
+    text-align: center;
+    color: transparent;
+    -webkit-text-stroke: 1px rgb(244 239 230 / 0.12);
+    user-select: none;
+    pointer-events: none;
+  }
+</style>

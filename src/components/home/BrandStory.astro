@@ -1,0 +1,161 @@
+---
+import { getImage } from 'astro:assets';
+import story from '../../assets/art/story-dark.jpg';
+import { brand } from '../../config/site';
+
+const img = await getImage({ src: story, widths: [480, 720, 1000, 1400], format: 'webp', quality: 72 });
+
+const pillars = [
+  {
+    n: 'I',
+    t: 'Kalite',
+    d: 'Seçkideki ürünler yeni ve etiketli olarak listelenir. Her siparişten önce ürünün durumu size açıkça teyit edilir.',
+  },
+  {
+    n: 'II',
+    t: 'Güven',
+    d: 'Sipariş, ödeme ve kargo boyunca muhatabınız doğrudan VEYRA’dır. Sorunuzu WhatsApp’tan yazdığınızda yanıt bizden gelir.',
+  },
+  {
+    n: 'III',
+    t: 'Uygun Fiyat',
+    d: 'Fiyatlar sitede açıkça yazılıdır. Siparişi onaylamadan önce toplam tutarı ve kargo bilgisini net biçimde paylaşırız.',
+  },
+];
+---
+
+<section id="hikaye" class="story on-ink" aria-labelledby="story-title">
+  <div class="story__grid">
+    <figure class="story__art">
+      <img
+        src={img.src}
+        srcset={img.srcSet.attribute}
+        sizes="(min-width: 64em) 46vw, 100vw"
+        width={story.width}
+        height={story.height}
+        alt=""
+        loading="lazy"
+        decoding="async"
+      />
+    </figure>
+    <div class="story__text">
+      <p class="eyebrow eyebrow--rule" data-reveal>VEYRA Hakkında</p>
+      <h2 id="story-title" class="story__title" data-reveal style="--reveal-i:1">
+        Kalite, güven ve uygun fiyat — <em>aynı cümlede.</em>
+      </h2>
+      <p class="lede story__lede" data-reveal style="--reveal-i:2">
+        {brand.legalName}, {brand.location.label}’den Türkiye’nin 81 iline ulaşan butik bir mağaza. Saç bakım teknolojilerinden
+        mutfak klasiklerine, termoslardan saatlere uzanan seçkimizi tek bir ilkeyle kuruyoruz: doğru ürünü, doğru fiyatla,
+        güvenle ulaştırmak.
+      </p>
+      <ol class="story__pillars" role="list">
+        {
+          pillars.map((p, i) => (
+            <li data-reveal style={`--reveal-i:${i + 3}`}>
+              <span class="story__n">{p.n}</span>
+              <h3>{p.t}</h3>
+              <p>{p.d}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </div>
+</section>
+
+<style>
+  .story {
+    overflow: hidden;
+  }
+
+  .story__grid {
+    display: grid;
+  }
+
+  @media (min-width: 64em) {
+    .story__grid {
+      grid-template-columns: minmax(0, 46fr) minmax(0, 54fr);
+      min-height: 52rem;
+    }
+  }
+
+  .story__art {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    max-height: 80svh;
+    width: 100%;
+  }
+
+  @media (min-width: 64em) {
+    .story__art {
+      aspect-ratio: auto;
+      max-height: none;
+    }
+  }
+
+  .story__art img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 62%;
+  }
+
+  .story__text {
+    display: grid;
+    align-content: center;
+    gap: var(--s-5);
+    padding: var(--section) var(--gutter);
+  }
+
+  @media (min-width: 64em) {
+    .story__text {
+      padding-inline: var(--s-9) max(var(--gutter), calc((100vw - var(--container)) / 2 + var(--gutter)));
+    }
+  }
+
+  .story__title {
+    font-size: var(--fs-2);
+    max-width: 15ch;
+  }
+
+  .story__lede {
+    max-width: 44ch;
+  }
+
+  .story__pillars {
+    display: grid;
+    gap: 0;
+    margin-top: var(--s-5);
+    border-top: 1px solid var(--line);
+  }
+
+  .story__pillars li {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: var(--s-1) var(--s-4);
+    padding-block: var(--s-5);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .story__n {
+    grid-row: span 2;
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--champagne-soft);
+    font-size: var(--fs-lg);
+    line-height: 1.3;
+  }
+
+  .story__pillars h3 {
+    font-size: var(--fs-4);
+    font-weight: 380;
+  }
+
+  .story__pillars p {
+    font-size: var(--fs-sm);
+    color: var(--muted-on-ink);
+    max-width: 46ch;
+  }
+</style>

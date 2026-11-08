@@ -1,0 +1,2645 @@
+{
+  "$comment": "VEYRA canlı katalog. Kaynak: Gardrops mağaza ekran görüntüleri (79 ilan; 75 görünür). Ayrıntı: docs/KATALOG.md",
+  "generatedFrom": "scripts/import/gardrops-screenshots.py",
+  "storeListingCount": 79,
+  "visibleListingCount": 75,
+  "products": [
+    {
+      "id": "vr-001",
+      "slug": "dyson-co-anda-2x-siklik-ve-guc-bir-arada",
+      "name": "Dyson Co-anda 2x — Şıklık ve Güç Bir Arada",
+      "brand": "Dyson",
+      "category": "sac-bakim",
+      "price": 9000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-001-1.jpg",
+          "alt": "Dyson Co-anda 2x — Şıklık ve Güç Bir Arada",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": 1,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          1,
+          47
+        ],
+        "url": "https://www.gardrops.com/dyson-co-anda-2x-siklik-ve-guc-bir-arada-6cc5df0c3b73c932-p-79259481-9056996",
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "gardrops-url",
+        "featuresSource": null
+      },
+      "review": [
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-002",
+      "slug": "katlanabilir-kamerali-drone-02",
+      "name": "Katlanabilir Kameralı Drone",
+      "brand": null,
+      "category": "elektronik",
+      "price": 7500,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-002-1.jpg",
+          "alt": "Katlanabilir Kameralı Drone",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          2
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-003",
+      "slug": "retro-su-isitici-ve-bicak-blogu-siyah-03",
+      "name": "Retro Su Isıtıcı ve Bıçak Bloğu — Siyah",
+      "brand": null,
+      "category": "mutfak",
+      "price": 8000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-003-1.jpg",
+          "alt": "Retro Su Isıtıcı ve Bıçak Bloğu — Siyah",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          3
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images",
+        "note"
+      ],
+      "reviewNote": "#6 ile aynı fotoğraf, farklı fiyat (8.000 / 16.000 ₺). Hangisinin set olduğu teyit edilmeli."
+    },
+    {
+      "id": "vr-004",
+      "slug": "xiaomi-istasyonlu-robot-supurge-04",
+      "name": "Xiaomi İstasyonlu Robot Süpürge",
+      "brand": "Xiaomi",
+      "category": "ev-teknolojisi",
+      "price": 18500,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-004-1.jpg",
+          "alt": "Xiaomi İstasyonlu Robot Süpürge",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          4
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-005",
+      "slug": "dyson-sac-sekillendirme-seti-mavi-bakir-05",
+      "name": "Dyson Saç Şekillendirme Seti — Mavi & Bakır",
+      "brand": "Dyson",
+      "category": "sac-bakim",
+      "price": 8000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-005-1.jpg",
+          "alt": "Dyson Saç Şekillendirme Seti — Mavi & Bakır",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          5
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-006",
+      "slug": "retro-mutfak-seti-siyah-06",
+      "name": "Retro Mutfak Seti — Siyah",
+      "brand": null,
+      "category": "mutfak",
+      "price": 16000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-006-1.jpg",
+          "alt": "Retro Mutfak Seti — Siyah",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          6
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images",
+        "note"
+      ],
+      "reviewNote": "#3 ile aynı fotoğraf, farklı fiyat (8.000 / 16.000 ₺)."
+    },
+    {
+      "id": "vr-007",
+      "slug": "dyson-sac-sekillendirme-seti-pembe-07",
+      "name": "Dyson Saç Şekillendirme Seti — Pembe",
+      "brand": "Dyson",
+      "category": "sac-bakim",
+      "price": 8000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-007-1.jpg",
+          "alt": "Dyson Saç Şekillendirme Seti — Pembe",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          7
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-008",
+      "slug": "taraftar-serisi-termos-bardak-transit-08",
+      "name": "Taraftar Serisi Termos Bardak — Transit",
+      "brand": null,
+      "category": "termos",
+      "price": 1500,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-008-1.jpg",
+          "alt": "Taraftar Serisi Termos Bardak — Transit",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          8
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-009",
+      "slug": "dyson-sac-sekillendirici-renk-secenekli-09",
+      "name": "Dyson Saç Şekillendirici — Renk Seçenekli",
+      "brand": "Dyson",
+      "category": "sac-bakim",
+      "price": 5500,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-009-1.jpg",
+          "alt": "Dyson Saç Şekillendirici — Renk Seçenekli",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          9,
+          16
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images",
+        "note"
+      ],
+      "reviewNote": "İki ilanda marka “Dyson” ve “Dyson / diğer” olarak girilmiş."
+    },
+    {
+      "id": "vr-010",
+      "slug": "dyson-kutulu-urun-10",
+      "name": "Dyson — Kutulu Ürün",
+      "brand": "Dyson",
+      "category": "sac-bakim",
+      "price": 5500,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-010-1.jpg",
+          "alt": "Dyson — Kutulu Ürün",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": true,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          10
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images",
+        "note"
+      ],
+      "reviewNote": "Fotoğrafta yalnızca koliler görünüyor; ürün tanımlanamadı. Başlık ve fotoğraf gelene kadar yayında gizli."
+    },
+    {
+      "id": "vr-011",
+      "slug": "bosch-turk-kahvesi-makinesi-11",
+      "name": "Bosch Türk Kahvesi Makinesi",
+      "brand": "Bosch",
+      "category": "mutfak",
+      "price": 2500,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-011-1.jpg",
+          "alt": "Bosch Türk Kahvesi Makinesi",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          11
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-012",
+      "slug": "dyson-wi-fi-hava-temizleyici-fan-12",
+      "name": "Dyson Wi-Fi Hava Temizleyici Fan",
+      "brand": "Dyson",
+      "category": "ev-teknolojisi",
+      "price": 16000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [
+        "Akıllı kontrol",
+        "Wi-Fi bağlantısı"
+      ],
+      "images": [
+        {
+          "file": "vr-012-1.jpg",
+          "alt": "Dyson Wi-Fi Hava Temizleyici Fan",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": 3,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          12,
+          41
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": "Satıcının ilan görselindeki ibare"
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-013",
+      "slug": "klasik-termos-matara-yesil-13",
+      "name": "Klasik Termos Matara — Yeşil",
+      "brand": null,
+      "category": "termos",
+      "price": 2500,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-013-1.jpg",
+          "alt": "Klasik Termos Matara — Yeşil",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          13
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-014",
+      "slug": "ultra-hd-projeksiyon-cihazi-14",
+      "name": "Ultra HD Projeksiyon Cihazı",
+      "brand": null,
+      "category": "elektronik",
+      "price": 4000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-014-1.jpg",
+          "alt": "Ultra HD Projeksiyon Cihazı",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          14
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-015",
+      "slug": "taraftar-serisi-termos-takim-renkleri-15",
+      "name": "Taraftar Serisi Termos — Takım Renkleri",
+      "brand": null,
+      "category": "termos",
+      "price": 1500,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-015-1.jpg",
+          "alt": "Taraftar Serisi Termos — Takım Renkleri",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          15
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images",
+        "note"
+      ],
+      "reviewNote": "#63 ile aynı fotoğraf, farklı fiyat (1.500 / 1.700 ₺)."
+    },
+    {
+      "id": "vr-017",
+      "slug": "philips-ipl-epilasyon-cihazi-17",
+      "name": "Philips IPL Epilasyon Cihazı",
+      "brand": "Philips",
+      "category": "kisisel-bakim",
+      "price": 8500,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-017-1.jpg",
+          "alt": "Philips IPL Epilasyon Cihazı",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          17
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-018",
+      "slug": "dyson-v15s-detect-submarine-kablosuz-supurge-18",
+      "name": "Dyson V15s Detect Submarine Kablosuz Süpürge",
+      "brand": "Dyson",
+      "category": "ev-teknolojisi",
+      "price": 19500,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-018-1.jpg",
+          "alt": "Dyson V15s Detect Submarine Kablosuz Süpürge",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": 2,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          18
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-019",
+      "slug": "sapli-termos-bardak-pastel-tonlar-19",
+      "name": "Saplı Termos Bardak — Pastel Tonlar",
+      "brand": null,
+      "category": "termos",
+      "price": 1300,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-019-1.jpg",
+          "alt": "Saplı Termos Bardak — Pastel Tonlar",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          19
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-020",
+      "slug": "ekranli-kumandali-drone-seti-20",
+      "name": "Ekranlı Kumandalı Drone Seti",
+      "brand": null,
+      "category": "elektronik",
+      "price": 7000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-020-1.jpg",
+          "alt": "Ekranlı Kumandalı Drone Seti",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          20
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-021",
+      "slug": "sapli-termos-bardak-renk-secenekli-21",
+      "name": "Saplı Termos Bardak — Renk Seçenekli",
+      "brand": null,
+      "category": "termos",
+      "price": 1300,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-021-1.jpg",
+          "alt": "Saplı Termos Bardak — Renk Seçenekli",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          21
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-022",
+      "slug": "stand-mikser-lila-kirmizi-22",
+      "name": "Stand Mikser — Lila & Kırmızı",
+      "brand": null,
+      "category": "mutfak",
+      "price": 7500,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-022-1.jpg",
+          "alt": "Stand Mikser — Lila & Kırmızı",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          22
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-023",
+      "slug": "dyson-sac-sekillendirme-seti-23",
+      "name": "Dyson Saç Şekillendirme Seti",
+      "brand": "Dyson",
+      "category": "sac-bakim",
+      "price": 9000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-023-1.jpg",
+          "alt": "Dyson Saç Şekillendirme Seti",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          23
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-024",
+      "slug": "dyson-sac-sekillendirme-seti-kirmizi-24",
+      "name": "Dyson Saç Şekillendirme Seti — Kırmızı",
+      "brand": "Dyson",
+      "category": "sac-bakim",
+      "price": 8000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-024-1.jpg",
+          "alt": "Dyson Saç Şekillendirme Seti — Kırmızı",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          24
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-025",
+      "slug": "retro-su-isitici-renk-secenekli-25",
+      "name": "Retro Su Isıtıcı — Renk Seçenekli",
+      "brand": null,
+      "category": "mutfak",
+      "price": 8000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-025-1.jpg",
+          "alt": "Retro Su Isıtıcı — Renk Seçenekli",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          25,
+          27
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-026",
+      "slug": "braun-ipl-epilasyon-cihazi-26",
+      "name": "Braun IPL Epilasyon Cihazı",
+      "brand": "Braun",
+      "category": "kisisel-bakim",
+      "price": 8000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-026-1.jpg",
+          "alt": "Braun IPL Epilasyon Cihazı",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": 6,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          26
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-028",
+      "slug": "retro-su-isitici-siyah-28",
+      "name": "Retro Su Isıtıcı — Siyah",
+      "brand": null,
+      "category": "mutfak",
+      "price": 8000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-028-1.jpg",
+          "alt": "Retro Su Isıtıcı — Siyah",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          28
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-029",
+      "slug": "sapli-termos-bardak-pembe-cicek-desenli-29",
+      "name": "Saplı Termos Bardak — Pembe Çiçek Desenli",
+      "brand": null,
+      "category": "termos",
+      "price": 1300,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-029-1.jpg",
+          "alt": "Saplı Termos Bardak — Pembe Çiçek Desenli",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          29
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-030",
+      "slug": "dyson-sac-sekillendirici-pembe-30",
+      "name": "Dyson Saç Şekillendirici — Pembe",
+      "brand": "Dyson",
+      "category": "sac-bakim",
+      "price": 7000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-030-1.jpg",
+          "alt": "Dyson Saç Şekillendirici — Pembe",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          30
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-031",
+      "slug": "xiaomi-robot-supurge-31",
+      "name": "Xiaomi Robot Süpürge",
+      "brand": "Xiaomi",
+      "category": "ev-teknolojisi",
+      "price": 16000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-031-1.jpg",
+          "alt": "Xiaomi Robot Süpürge",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          31
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-032",
+      "slug": "g17-pro-tablet-klavyeli-32",
+      "name": "G17 Pro Tablet — Klavyeli",
+      "brand": null,
+      "category": "elektronik",
+      "price": 7300,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-032-1.jpg",
+          "alt": "G17 Pro Tablet — Klavyeli",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": 8,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          32
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-033",
+      "slug": "termos-bardak-genis-renk-secenegi-33",
+      "name": "Termos Bardak — Geniş Renk Seçeneği",
+      "brand": null,
+      "category": "termos",
+      "price": 1300,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-033-1.jpg",
+          "alt": "Termos Bardak — Geniş Renk Seçeneği",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          33
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-034",
+      "slug": "retro-bicak-seti-standli-34",
+      "name": "Retro Bıçak Seti — Standlı",
+      "brand": null,
+      "category": "mutfak",
+      "price": 7200,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-034-1.jpg",
+          "alt": "Retro Bıçak Seti — Standlı",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          34
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-035",
+      "slug": "dyson-sac-sekillendirme-seti-kutulu-35",
+      "name": "Dyson Saç Şekillendirme Seti — Kutulu",
+      "brand": "Dyson",
+      "category": "sac-bakim",
+      "price": 8000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-035-1.jpg",
+          "alt": "Dyson Saç Şekillendirme Seti — Kutulu",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          35
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-036",
+      "slug": "philips-ipl-epilasyon-cihazi-pembe-36",
+      "name": "Philips IPL Epilasyon Cihazı — Pembe",
+      "brand": "Philips",
+      "category": "kisisel-bakim",
+      "price": 8000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-036-1.jpg",
+          "alt": "Philips IPL Epilasyon Cihazı — Pembe",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          36
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-037",
+      "slug": "retro-caydanlik-krem-siyah-37",
+      "name": "Retro Çaydanlık — Krem & Siyah",
+      "brand": null,
+      "category": "mutfak",
+      "price": 8000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-037-1.jpg",
+          "alt": "Retro Çaydanlık — Krem & Siyah",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          37
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-038",
+      "slug": "dyson-sac-sekillendirme-seti-mor-kutu-38",
+      "name": "Dyson Saç Şekillendirme Seti — Mor Kutu",
+      "brand": "Dyson",
+      "category": "sac-bakim",
+      "price": 9000,
+      "condition": null,
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-038-1.jpg",
+          "alt": "Dyson Saç Şekillendirme Seti — Mor Kutu",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          38
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images",
+        "note"
+      ],
+      "reviewNote": "İlanda “Yeni & Etiketli” rozeti görünmüyor; ürün durumu teyit edilmeli."
+    },
+    {
+      "id": "vr-039",
+      "slug": "dyson-sac-duzlestirici-mor-bakir-39",
+      "name": "Dyson Saç Düzleştirici — Mor & Bakır",
+      "brand": "Dyson",
+      "category": "sac-bakim",
+      "price": 6000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-039-1.jpg",
+          "alt": "Dyson Saç Düzleştirici — Mor & Bakır",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          39
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-040",
+      "slug": "dyson-sac-duzlestirici-pembe-kutulu-40",
+      "name": "Dyson Saç Düzleştirici — Pembe Kutulu",
+      "brand": "Dyson",
+      "category": "sac-bakim",
+      "price": 6200,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-040-1.jpg",
+          "alt": "Dyson Saç Düzleştirici — Pembe Kutulu",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          40,
+          44
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-042",
+      "slug": "retro-su-isitici-krem-mavi-42",
+      "name": "Retro Su Isıtıcı — Krem & Mavi",
+      "brand": null,
+      "category": "mutfak",
+      "price": 8000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-042-1.jpg",
+          "alt": "Retro Su Isıtıcı — Krem & Mavi",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": 5,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          42
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-043",
+      "slug": "dyson-sac-duzlestirici-renk-secenekli-43",
+      "name": "Dyson Saç Düzleştirici — Renk Seçenekli",
+      "brand": "Dyson",
+      "category": "sac-bakim",
+      "price": 5500,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-043-1.jpg",
+          "alt": "Dyson Saç Düzleştirici — Renk Seçenekli",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          43
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-045",
+      "slug": "philips-ipl-epilasyon-seti-45",
+      "name": "Philips IPL Epilasyon Seti",
+      "brand": "Philips",
+      "category": "kisisel-bakim",
+      "price": 8000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-045-1.jpg",
+          "alt": "Philips IPL Epilasyon Seti",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          45
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-046",
+      "slug": "dyson-sac-sekillendirme-seti-tasima-kutulu-46",
+      "name": "Dyson Saç Şekillendirme Seti — Taşıma Kutulu",
+      "brand": "Dyson",
+      "category": "sac-bakim",
+      "price": 8000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-046-1.jpg",
+          "alt": "Dyson Saç Şekillendirme Seti — Taşıma Kutulu",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          46,
+          60
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-048",
+      "slug": "dyson-sac-kurutma-makinesi-48",
+      "name": "Dyson Saç Kurutma Makinesi",
+      "brand": "Dyson",
+      "category": "sac-bakim",
+      "price": 6500,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-048-1.jpg",
+          "alt": "Dyson Saç Kurutma Makinesi",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          48
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-049",
+      "slug": "dyson-sac-sekillendirme-seti-bordo-kutu-49",
+      "name": "Dyson Saç Şekillendirme Seti — Bordo Kutu",
+      "brand": "Dyson",
+      "category": "sac-bakim",
+      "price": 9000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-049-1.jpg",
+          "alt": "Dyson Saç Şekillendirme Seti — Bordo Kutu",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          49
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-050",
+      "slug": "sapli-termos-bardak-sakura-desenli-50",
+      "name": "Saplı Termos Bardak — Sakura Desenli",
+      "brand": null,
+      "category": "termos",
+      "price": 1300,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-050-1.jpg",
+          "alt": "Saplı Termos Bardak — Sakura Desenli",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          50
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-051",
+      "slug": "sapli-termos-bardak-1-16-l-51",
+      "name": "Saplı Termos Bardak 1,16 L",
+      "brand": null,
+      "category": "termos",
+      "price": 1707,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-051-1.jpg",
+          "alt": "Saplı Termos Bardak 1,16 L",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          51
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-052",
+      "slug": "sapli-termos-matara-renk-secenekli-52",
+      "name": "Saplı Termos Matara — Renk Seçenekli",
+      "brand": null,
+      "category": "termos",
+      "price": 1750,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-052-1.jpg",
+          "alt": "Saplı Termos Matara — Renk Seçenekli",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          52
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-053",
+      "slug": "sapli-termos-matara-canli-renkler-53",
+      "name": "Saplı Termos Matara — Canlı Renkler",
+      "brand": null,
+      "category": "termos",
+      "price": 1750,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-053-1.jpg",
+          "alt": "Saplı Termos Matara — Canlı Renkler",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          53
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-054",
+      "slug": "sapli-termos-bardak-karakter-desenli-54",
+      "name": "Saplı Termos Bardak — Karakter Desenli",
+      "brand": null,
+      "category": "termos",
+      "price": 1800,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-054-1.jpg",
+          "alt": "Saplı Termos Bardak — Karakter Desenli",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          54
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-055",
+      "slug": "dyson-v15-detect-submarine-kablosuz-supurge-55",
+      "name": "Dyson V15 Detect Submarine Kablosuz Süpürge",
+      "brand": "Dyson",
+      "category": "ev-teknolojisi",
+      "price": 20000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-055-1.jpg",
+          "alt": "Dyson V15 Detect Submarine Kablosuz Süpürge",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          55
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-056",
+      "slug": "columbia-termos-siyah-yesil-56",
+      "name": "Columbia Termos — Siyah & Yeşil",
+      "brand": "Columbia",
+      "category": "termos",
+      "price": 2900,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-056-1.jpg",
+          "alt": "Columbia Termos — Siyah & Yeşil",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          56
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-057",
+      "slug": "columbia-termos-57",
+      "name": "Columbia Termos",
+      "brand": "Columbia",
+      "category": "termos",
+      "price": 3000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-057-1.jpg",
+          "alt": "Columbia Termos",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          57
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-058",
+      "slug": "dyson-v15s-absolute-kablosuz-supurge-58",
+      "name": "Dyson V15s Absolute Kablosuz Süpürge",
+      "brand": "Dyson",
+      "category": "ev-teknolojisi",
+      "price": 15000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-058-1.jpg",
+          "alt": "Dyson V15s Absolute Kablosuz Süpürge",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          58
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-059",
+      "slug": "columbia-termos-haki-antrasit-59",
+      "name": "Columbia Termos — Haki & Antrasit",
+      "brand": "Columbia",
+      "category": "termos",
+      "price": 3500,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-059-1.jpg",
+          "alt": "Columbia Termos — Haki & Antrasit",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          59
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-061",
+      "slug": "chanel-parfum-seti-4lu-61",
+      "name": "Chanel Parfüm Seti — 4’lü",
+      "brand": "Chanel",
+      "category": "saat-parfum",
+      "price": 4000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-061-1.jpg",
+          "alt": "Chanel Parfüm Seti — 4’lü",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          61
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-062",
+      "slug": "kutulu-parfum-turkuaz-sise-62",
+      "name": "Kutulu Parfüm — Turkuaz Şişe",
+      "brand": null,
+      "category": "saat-parfum",
+      "price": 5000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-062-1.jpg",
+          "alt": "Kutulu Parfüm — Turkuaz Şişe",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          62
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-063",
+      "slug": "taraftar-serisi-termos-takim-renkleri-63",
+      "name": "Taraftar Serisi Termos — Takım Renkleri",
+      "brand": null,
+      "category": "termos",
+      "price": 1700,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-063-1.jpg",
+          "alt": "Taraftar Serisi Termos — Takım Renkleri",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          63
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images",
+        "note"
+      ],
+      "reviewNote": "#15 ile aynı fotoğraf, farklı fiyat (1.500 / 1.700 ₺)."
+    },
+    {
+      "id": "vr-064",
+      "slug": "versace-kol-saati-model-secenekli-64",
+      "name": "Versace Kol Saati — Model Seçenekli",
+      "brand": "Versace",
+      "category": "saat-parfum",
+      "price": 6000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-064-1.jpg",
+          "alt": "Versace Kol Saati — Model Seçenekli",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          64
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-065",
+      "slug": "termos-sise-siyah-65",
+      "name": "Termos Şişe — Siyah",
+      "brand": null,
+      "category": "termos",
+      "price": 1500,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-065-1.jpg",
+          "alt": "Termos Şişe — Siyah",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          65
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-066",
+      "slug": "klasik-termos-seti-yesil-66",
+      "name": "Klasik Termos Seti — Yeşil",
+      "brand": null,
+      "category": "termos",
+      "price": 3000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-066-1.jpg",
+          "alt": "Klasik Termos Seti — Yeşil",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": 7,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          66
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-067",
+      "slug": "dyson-sac-duzlestirici-kutulu-67",
+      "name": "Dyson Saç Düzleştirici — Kutulu",
+      "brand": "Dyson",
+      "category": "sac-bakim",
+      "price": 7000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-067-1.jpg",
+          "alt": "Dyson Saç Düzleştirici — Kutulu",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          67
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-068",
+      "slug": "dyson-sac-sekillendirme-seti-gul-kurusu-68",
+      "name": "Dyson Saç Şekillendirme Seti — Gül Kurusu",
+      "brand": "Dyson",
+      "category": "sac-bakim",
+      "price": 8000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-068-1.jpg",
+          "alt": "Dyson Saç Şekillendirme Seti — Gül Kurusu",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          68
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-069",
+      "slug": "versace-kol-saati-yesil-kadran-69",
+      "name": "Versace Kol Saati — Yeşil Kadran",
+      "brand": "Versace",
+      "category": "saat-parfum",
+      "price": 6000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-069-1.jpg",
+          "alt": "Versace Kol Saati — Yeşil Kadran",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": 4,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          69
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-070",
+      "slug": "dyson-sac-duzlestirici-4-renk-70",
+      "name": "Dyson Saç Düzleştirici — 4 Renk",
+      "brand": "Dyson",
+      "category": "sac-bakim",
+      "price": 7000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-070-1.jpg",
+          "alt": "Dyson Saç Düzleştirici — 4 Renk",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          70
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-071",
+      "slug": "braun-ipl-epilasyon-cihazi-cantali-71",
+      "name": "Braun IPL Epilasyon Cihazı — Çantalı",
+      "brand": "Braun",
+      "category": "kisisel-bakim",
+      "price": 7000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-071-1.jpg",
+          "alt": "Braun IPL Epilasyon Cihazı — Çantalı",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          71
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-072",
+      "slug": "versace-kadin-kol-saati-72",
+      "name": "Versace Kadın Kol Saati",
+      "brand": "Versace",
+      "category": "saat-parfum",
+      "price": 6500,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-072-1.jpg",
+          "alt": "Versace Kadın Kol Saati",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          72
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-073",
+      "slug": "versace-kadin-kol-saati-altin-ton-73",
+      "name": "Versace Kadın Kol Saati — Altın Ton",
+      "brand": "Versace",
+      "category": "saat-parfum",
+      "price": 6500,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-073-1.jpg",
+          "alt": "Versace Kadın Kol Saati — Altın Ton",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          73
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-074",
+      "slug": "versace-erkek-kol-saati-celik-74",
+      "name": "Versace Erkek Kol Saati — Çelik",
+      "brand": "Versace",
+      "category": "saat-parfum",
+      "price": 6000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-074-1.jpg",
+          "alt": "Versace Erkek Kol Saati — Çelik",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          74
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    },
+    {
+      "id": "vr-075",
+      "slug": "dyson-sac-sekillendirme-seti-lacivert-kutu-75",
+      "name": "Dyson Saç Şekillendirme Seti — Lacivert Kutu",
+      "brand": "Dyson",
+      "category": "sac-bakim",
+      "price": 9000,
+      "condition": "Yeni & Etiketli",
+      "availability": "listed",
+      "description": null,
+      "features": [],
+      "images": [
+        {
+          "file": "vr-075-1.jpg",
+          "alt": "Dyson Saç Şekillendirme Seti — Lacivert Kutu",
+          "quality": "interim-lowres"
+        }
+      ],
+      "featured": null,
+      "hidden": false,
+      "source": {
+        "platform": "gardrops",
+        "store": "https://www.gardrops.com/veyraticaret",
+        "listingPositions": [
+          75
+        ],
+        "url": null,
+        "capturedFrom": "owner-screenshots",
+        "nameSource": "identified-from-listing-photo",
+        "featuresSource": null
+      },
+      "review": [
+        "name",
+        "description",
+        "images"
+      ],
+      "reviewNote": null
+    }
+  ]
+}

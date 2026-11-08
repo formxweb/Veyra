@@ -1,0 +1,205 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHead from '../components/ui/PageHead.astro';
+import Icon from '../components/ui/Icon.astro';
+import { brand } from '../config/site';
+import { waLink } from '../lib/whatsapp';
+
+const groups = [
+  {
+    id: 'siparis',
+    title: 'Sipariş',
+    items: [
+      {
+        q: 'Nasıl sipariş verebilirim?',
+        a: 'Ürünleri sepetinize ekleyin, Sepet sayfasında teslimat bilgilerinizi yazın ve “Siparişi WhatsApp ile Gönder” butonuna dokunun. Siparişiniz hazır bir WhatsApp mesajı olarak açılır; mesajı gönderdiğinizde talebiniz bize ulaşır.',
+      },
+      {
+        q: 'Tek bir ürünü doğrudan sorabilir miyim?',
+        a: 'Evet. Her ürün sayfasındaki “WhatsApp ile Sipariş Ver” butonu, ürün adı, kodu ve seçtiğiniz adetle hazırlanmış bir mesaj açar.',
+      },
+      {
+        q: 'Siparişim ne zaman kesinleşir?',
+        a: 'Mesajınızı aldıktan sonra stok durumunu teyit eder, toplam tutarı ve kargo bilgisini size yazarız. Ödemeniz tamamlandığında siparişiniz kesinleşir.',
+      },
+    ],
+  },
+  {
+    id: 'odeme',
+    title: 'Ödeme',
+    items: [
+      {
+        q: 'Hangi ödeme yöntemlerini kabul ediyorsunuz?',
+        a: `Ödemeler ${brand.payment.label} ile alınır. IBAN bilgisi, sipariş onayında WhatsApp üzerinden size iletilir.`,
+      },
+      {
+        q: 'Sitede kart bilgisi girmem gerekiyor mu?',
+        a: 'Hayır. Bu sitede ödeme alınmaz; kart bilgisi istenmez ve saklanmaz.',
+      },
+    ],
+  },
+  {
+    id: 'kargo',
+    title: 'Kargo',
+    items: [
+      {
+        q: 'Hangi illere gönderim yapıyorsunuz?',
+        a: `Türkiye’nin 81 ilinin tamamına kargo gönderiyoruz. Siparişler ${brand.location.district}’den yola çıkar.`,
+      },
+      {
+        q: 'Kargo ücreti ne kadar?',
+        a: 'Kargo ücreti ve gönderim bilgisi, sipariş onayında toplam tutarla birlikte size açıkça yazılır.',
+      },
+    ],
+  },
+  {
+    id: 'urun',
+    title: 'Ürünler',
+    items: [
+      {
+        q: 'Ürünlerin durumu nedir?',
+        a: 'Seçkideki ürünler, ürün sayfasında belirtilen durumla listelenir (ör. “Yeni & Etiketli”). Sipariş öncesinde ürünün güncel durumu size ayrıca teyit edilir.',
+      },
+      {
+        q: 'Ek fotoğraf veya bilgi alabilir miyim?',
+        a: 'Elbette. Ürün sayfasındaki “Ürün hakkında soru sor” bağlantısıyla bize yazın; ek fotoğraf ve ayrıntıları WhatsApp’tan paylaşırız.',
+      },
+    ],
+  },
+  {
+    id: 'iade',
+    title: 'İade & Değişim',
+    items: [
+      {
+        q: 'İade veya değişim yapabilir miyim?',
+        a: '6502 sayılı Tüketicinin Korunması Hakkında Kanun ve Mesafeli Sözleşmeler Yönetmeliği kapsamındaki haklarınız saklıdır. İade ya da değişim talebiniz için WhatsApp üzerinden bize ulaşın; süreci birlikte planlayalım.',
+      },
+    ],
+  },
+];
+
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: groups.flatMap((g) =>
+    g.items.map((i) => ({ '@type': 'Question', name: i.q, acceptedAnswer: { '@type': 'Answer', text: i.a } })),
+  ),
+};
+---
+
+<BaseLayout title="Sipariş & Kargo" description="VEYRA TİCARET sipariş, ödeme (EFT / Havale), kargo (81 il) ve iade bilgileri." jsonLd={faqLd}>
+  <PageHead
+    eyebrow="Yardım"
+    title="Sipariş, ödeme <em>ve kargo</em>"
+    lede="Merak ettiklerinizin kısa ve net yanıtları. Burada bulamadığınız her şey için bize doğrudan yazabilirsiniz."
+    crumbs={[{ label: 'Sipariş & Kargo' }]}
+  />
+  <div class="container help">
+    <nav class="help__toc" aria-label="Başlıklar">
+      <ol role="list">
+        {groups.map((g) => <li><a href={`#${g.id}`}>{g.title}</a></li>)}
+      </ol>
+      <a class="btn btn--block" href={waLink('Merhaba VEYRA, bir sorum var:')} target="_blank" rel="noopener">
+        <Icon name="whatsapp" /> Soru Sorun
+      </a>
+    </nav>
+    <div class="help__body">
+      {
+        groups.map((g) => (
+          <section id={g.id} class="help__group" aria-labelledby={`h-${g.id}`}>
+            <h2 id={`h-${g.id}`} class="help__h">{g.title}</h2>
+            <div class="acc">
+              {g.items.map((i, k) => (
+                <details open={k === 0}>
+                  <summary>
+                    {i.q} <Icon name="plus" />
+                  </summary>
+                  <div class="acc__body">
+                    <p>{i.a}</p>
+                  </div>
+                </details>
+              ))}
+            </div>
+          </section>
+        ))
+      }
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .help {
+    display: grid;
+    gap: var(--s-7);
+    padding-bottom: var(--section);
+  }
+
+  @media (min-width: 64em) {
+    .help {
+      grid-template-columns: 16rem minmax(0, 1fr);
+      gap: var(--s-9);
+      align-items: start;
+    }
+
+    .help__toc {
+      position: sticky;
+      top: calc(var(--header-h) + var(--s-5));
+    }
+  }
+
+  .help__toc {
+    display: grid;
+    gap: var(--s-5);
+  }
+
+  .help__toc ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-2);
+  }
+
+  @media (min-width: 64em) {
+    .help__toc ol {
+      display: grid;
+      gap: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .help__toc ol a {
+      display: block;
+      padding-block: var(--s-3);
+      border-bottom: 1px solid var(--line);
+      font-size: var(--fs-sm);
+    }
+  }
+
+  @media (max-width: 63.99em) {
+    .help__toc ol a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.5rem;
+      padding: 0 1rem;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      font-size: var(--fs-sm);
+    }
+  }
+
+  .help__body {
+    display: grid;
+    gap: var(--s-8);
+  }
+
+  .help__h {
+    margin-bottom: var(--s-4);
+    font-size: var(--fs-3);
+  }
+
+  .help .acc summary {
+    font-family: var(--font-sans);
+    font-size: var(--fs-md);
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+</style>

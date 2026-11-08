@@ -1,0 +1,295 @@
+---
+import { getImage } from 'astro:assets';
+import heroDesktop from '../../assets/art/hero-desktop.jpg';
+import heroMobile from '../../assets/art/hero-mobile.jpg';
+import { brand } from '../../config/site';
+import { catalogMeta } from '../../data/catalog';
+import { waLink } from '../../lib/whatsapp';
+import Icon from '../ui/Icon.astro';
+
+const desk = {
+  avif: await getImage({ src: heroDesktop, widths: [1280, 1920, 2560, 2880], format: 'avif', quality: 62 }),
+  webp: await getImage({ src: heroDesktop, widths: [1280, 1920, 2560, 2880], format: 'webp', quality: 74 }),
+  fallback: await getImage({ src: heroDesktop, width: 1920, format: 'jpeg', quality: 76 }),
+};
+const mob = {
+  avif: await getImage({ src: heroMobile, widths: [640, 828, 1080, 1290], format: 'avif', quality: 60 }),
+  webp: await getImage({ src: heroMobile, widths: [640, 828, 1080, 1290], format: 'webp', quality: 72 }),
+};
+const mq = '(max-width: 47.99em)';
+---
+
+<section class="hero" aria-labelledby="hero-title">
+  <picture class="hero__art">
+    <source media={mq} type="image/avif" srcset={mob.avif.srcSet.attribute} sizes="100vw" />
+    <source media={mq} type="image/webp" srcset={mob.webp.srcSet.attribute} sizes="100vw" />
+    <source type="image/avif" srcset={desk.avif.srcSet.attribute} sizes="100vw" />
+    <source type="image/webp" srcset={desk.webp.srcSet.attribute} sizes="100vw" />
+    <img
+      src={desk.fallback.src}
+      width={heroDesktop.width}
+      height={heroDesktop.height}
+      alt=""
+      fetchpriority="high"
+      decoding="async"
+    />
+  </picture>
+
+  <div class="container hero__inner">
+    <p class="eyebrow eyebrow--rule hero__eyebrow">VEYRA TİCARET · {brand.location.label.toLocaleUpperCase('tr-TR')}</p>
+    <h1 id="hero-title" class="display hero__title">
+      <span class="hero__line"><span>Özenle seçilir.</span></span>
+      <span class="hero__line"><span><em>Güvenle</em> ulaşır.</span></span>
+    </h1>
+    <p class="lede hero__lede">
+      Saç bakım teknolojilerinden mutfak klasiklerine uzanan seçki. WhatsApp üzerinden kişisel sipariş, Türkiye’nin 81 iline
+      kargo.
+    </p>
+    <div class="hero__ctas">
+      <a class="btn" href="/magaza">Koleksiyonu Keşfet <Icon name="arrow-right" class="icon icon--arrow" /></a>
+      <a class="link" href={waLink('Merhaba VEYRA, ürünleriniz hakkında bilgi almak istiyorum.')} target="_blank" rel="noopener">
+        <Icon name="whatsapp" /> WhatsApp’tan yazın
+      </a>
+    </div>
+  </div>
+
+  <div class="container hero__foot">
+    <dl class="hero__facts">
+      <div><dt>Ürün</dt><dd class="num">{catalogMeta.total}</dd></div>
+      <div><dt>Koleksiyon</dt><dd class="num">{catalogMeta.collections}</dd></div>
+      <div><dt>İle kargo</dt><dd class="num">{brand.shipping.coverage}</dd></div>
+      <div class="hero__facts-pay"><dt>Ödeme</dt><dd>{brand.payment.label}</dd></div>
+    </dl>
+    <a class="hero__scroll" href="#koleksiyonlar" aria-label="Koleksiyonlara in">
+      <span></span>
+    </a>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    min-height: clamp(38rem, calc(100svh - var(--bar-h)), 64rem);
+    margin-top: calc(-1 * var(--header-h));
+    padding-top: var(--header-h);
+    overflow: hidden;
+    isolation: isolate;
+    background: #e3d9c8;
+  }
+
+  .hero__art {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+
+  .hero__art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 62% 60%;
+    animation: hero-settle 2.6s var(--ease-out) both;
+  }
+
+  @keyframes hero-settle {
+    from {
+      transform: scale(1.06);
+      filter: brightness(0.94);
+    }
+  }
+
+  .hero__inner {
+    align-self: center;
+    display: grid;
+    justify-items: start;
+    gap: var(--s-5);
+    padding-block: var(--s-8) var(--s-6);
+  }
+
+  .hero__title {
+    font-size: var(--fs-hero);
+    max-width: 9.5em;
+  }
+
+  .hero__line {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0.08em;
+    margin-bottom: -0.08em;
+  }
+
+  .hero__line > span {
+    display: block;
+    animation: line-up 1.25s var(--ease-out) both;
+  }
+
+  .hero__line:nth-child(2) > span {
+    animation-delay: 0.12s;
+  }
+
+  @keyframes line-up {
+    from {
+      transform: translateY(105%);
+    }
+  }
+
+  .hero__eyebrow,
+  .hero__lede,
+  .hero__ctas,
+  .hero__foot {
+    animation: fade-up 1.1s var(--ease-out) both;
+  }
+
+  .hero__eyebrow {
+    animation-delay: 0.05s;
+  }
+
+  .hero__lede {
+    animation-delay: 0.35s;
+    color: var(--ink-soft);
+    max-width: 30rem;
+  }
+
+  .hero__ctas {
+    animation-delay: 0.48s;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--s-4) var(--s-6);
+    margin-top: var(--s-2);
+  }
+
+  .hero__foot {
+    animation-delay: 0.7s;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    padding-bottom: var(--s-6);
+  }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero__art img,
+    .hero__line > span,
+    .hero__eyebrow,
+    .hero__lede,
+    .hero__ctas,
+    .hero__foot {
+      animation: none;
+    }
+  }
+
+  .hero__facts {
+    display: flex;
+    gap: var(--s-6);
+    padding-top: var(--s-4);
+    border-top: 1px solid var(--line-strong);
+  }
+
+  .hero__facts div {
+    display: grid;
+    gap: 0.15rem;
+  }
+
+  .hero__facts dt {
+    font-size: var(--fs-2xs);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    order: 2;
+  }
+
+  .hero__facts dd {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    line-height: 1.1;
+  }
+
+  .hero__scroll {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 4rem;
+  }
+
+  .hero__scroll span {
+    position: relative;
+    width: 1px;
+    height: 3rem;
+    background: var(--line-strong);
+    overflow: hidden;
+  }
+
+  .hero__scroll span::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--ink);
+    animation: scroll-cue 2.4s var(--ease-in-out) infinite;
+  }
+
+  @keyframes scroll-cue {
+    0% {
+      transform: translateY(-100%);
+    }
+    55%,
+    100% {
+      transform: translateY(100%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero__scroll span::after {
+      animation: none;
+    }
+  }
+
+  /* ---- mobile: recomposed, not shrunk ---- */
+  @media (max-width: 47.99em) {
+    .hero {
+      min-height: max(46rem, calc(100svh - var(--bar-h) + 6rem));
+    }
+
+    .hero__art img {
+      object-position: 50% 100%;
+    }
+
+    .hero__inner {
+      align-self: start;
+      gap: var(--s-4);
+      padding-top: var(--s-6);
+    }
+
+    .hero__title {
+      font-size: clamp(2.9rem, 13.2vw, 4.2rem);
+    }
+
+    .hero__lede {
+      font-size: var(--fs-md);
+      max-width: 23rem;
+    }
+
+    .hero__ctas {
+      gap: var(--s-3) var(--s-5);
+    }
+
+    .hero__foot {
+      display: none;
+    }
+  }
+
+  @media (min-width: 48em) and (max-width: 63.99em) {
+    .hero__title {
+      font-size: clamp(3.5rem, 9vw, 5.5rem);
+    }
+  }
+</style>

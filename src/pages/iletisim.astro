@@ -1,0 +1,138 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHead from '../components/ui/PageHead.astro';
+import ContactForm from '../islands/ContactForm';
+import Icon from '../components/ui/Icon.astro';
+import { brand } from '../config/site';
+import { waLink } from '../lib/whatsapp';
+---
+
+<BaseLayout title="İletişim" description={`VEYRA TİCARET ile iletişim: WhatsApp ${brand.whatsapp.display}, ${brand.location.district} / ${brand.location.city}.`}>
+  <PageHead
+    eyebrow="İletişim"
+    title="Doğrudan <em>bize yazın.</em>"
+    lede="Ürün, stok, sipariş ya da kargo — her soru için tek numara. Mesajınız doğrudan VEYRA’ya ulaşır."
+    crumbs={[{ label: 'İletişim' }]}
+  />
+  <div class="container contact">
+    <aside class="contact__cards" aria-label="İletişim bilgileri">
+      <a class="contact__card contact__card--primary on-ink" href={waLink('Merhaba VEYRA, bilgi almak istiyorum.')} target="_blank" rel="noopener">
+        <Icon name="whatsapp" />
+        <span class="eyebrow">WhatsApp</span>
+        <span class="contact__big">{brand.whatsapp.display}</span>
+        <span class="contact__hint">Sohbeti başlat <Icon name="arrow-up-right" /></span>
+      </a>
+      <a class="contact__card" href={`tel:${brand.whatsapp.tel}`}>
+        <Icon name="phone" />
+        <span class="eyebrow">Telefon</span>
+        <span class="contact__big">{brand.whatsapp.display}</span>
+      </a>
+      <div class="contact__card">
+        <Icon name="pin" />
+        <span class="eyebrow">Konum</span>
+        <span class="contact__big">{brand.location.district}</span>
+        <span class="contact__hint">{brand.location.city} · Türkiye’nin 81 iline kargo</span>
+      </div>
+      <div class="contact__card">
+        <Icon name="bank" />
+        <span class="eyebrow">Ödeme</span>
+        <span class="contact__big">{brand.payment.label}</span>
+        <span class="contact__hint">IBAN, sipariş onayında iletilir</span>
+      </div>
+    </aside>
+    <section class="contact__form" aria-labelledby="cf-title">
+      <h2 id="cf-title" class="contact__form-title">Mesaj gönderin</h2>
+      <p class="muted">Formu doldurun; mesajınız WhatsApp’ta hazır olarak açılır, siz gönderirsiniz.</p>
+      <ContactForm client:visible />
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .contact {
+    display: grid;
+    gap: var(--s-7);
+    padding-bottom: var(--section);
+  }
+
+  @media (min-width: 64em) {
+    .contact {
+      grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+      align-items: start;
+      gap: var(--s-9);
+    }
+  }
+
+  .contact__cards {
+    display: grid;
+    gap: var(--s-3);
+  }
+
+  @media (min-width: 40em) and (max-width: 63.99em) {
+    .contact__cards {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .contact__card {
+    display: grid;
+    gap: var(--s-2);
+    padding: var(--s-5);
+    border: 1px solid var(--line);
+    background: var(--paper);
+    transition: border-color var(--dur-2);
+  }
+
+  a.contact__card:hover {
+    border-color: var(--ink);
+  }
+
+  .contact__card > :global(.icon) {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-bottom: var(--s-3);
+    color: var(--stone-600);
+  }
+
+  .contact__card--primary {
+    background: var(--ink);
+    border-color: var(--ink);
+  }
+
+  .contact__card--primary > :global(.icon) {
+    color: var(--champagne-soft);
+  }
+
+  .contact__big {
+    font-family: var(--font-display);
+    font-size: var(--fs-3);
+    font-weight: 350;
+    line-height: 1.15;
+  }
+
+  .contact__hint {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s-2);
+    font-size: var(--fs-sm);
+    color: var(--muted);
+  }
+
+  .on-ink .contact__hint {
+    color: var(--muted-on-ink);
+  }
+
+  .contact__hint :global(.icon) {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .contact__form {
+    display: grid;
+    gap: var(--s-4);
+  }
+
+  .contact__form-title {
+    font-size: var(--fs-3);
+  }
+</style>

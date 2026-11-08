@@ -1,0 +1,248 @@
+---
+import { brand } from '../../config/site';
+import { provinces } from '../../lib/provinces';
+import { waLink } from '../../lib/whatsapp';
+import Icon from '../ui/Icon.astro';
+
+const tiles = [
+  {
+    k: '81',
+    label: 'İle kargo',
+    title: 'Türkiye’nin her yerine',
+    text: `Siparişiniz ${brand.location.label}’den yola çıkar ve Türkiye’nin 81 ilinin tamamına gönderilir.`,
+  },
+  {
+    k: 'WhatsApp',
+    label: 'Doğrudan iletişim',
+    title: brand.whatsapp.display,
+    text: 'Sipariş, stok sorusu ve destek için tek numara. Yazdığınızda karşınızda doğrudan VEYRA var.',
+    href: waLink('Merhaba VEYRA, bilgi almak istiyorum.'),
+  },
+  {
+    k: 'EFT / Havale',
+    label: 'Ödeme',
+    title: 'Banka transferi ile',
+    text: 'IBAN bilgisi sipariş onayında iletilir. Sitede hiçbir kart bilgisi istenmez ve saklanmaz.',
+  },
+  {
+    k: 'Yeni',
+    label: '& Etiketli',
+    title: 'Durumu açıkça bilinen ürünler',
+    text: 'Seçkideki ürünler yeni ve etiketli olarak listelenir; ürün durumu sipariş öncesinde teyit edilir.',
+  },
+];
+---
+
+<section class="section trust" aria-labelledby="trust-title">
+  <div class="container">
+    <div class="trust__head" data-reveal>
+      <p class="eyebrow eyebrow--rule">Alışveriş Deneyimi</p>
+      <h2 id="trust-title" class="trust__title">Sade, şeffaf, <em>kişisel.</em></h2>
+    </div>
+    <ul class="trust__tiles" role="list">
+      {
+        tiles.map((t, i) => (
+          <li class="trust__tile" data-reveal style={`--reveal-i:${i}`}>
+            <p class="trust__k">
+              <span class="trust__big">{t.k}</span>
+              <span class="trust__label">{t.label}</span>
+            </p>
+            <h3 class="trust__t">
+              {t.href ? (
+                <a href={t.href} target="_blank" rel="noopener">
+                  {t.title} <Icon name="arrow-up-right" />
+                </a>
+              ) : (
+                t.title
+              )}
+            </h3>
+            <p class="trust__d">{t.text}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+  <div class="marquee" aria-label="Kargo gönderdiğimiz 81 il">
+    <div class="marquee__track">
+      {
+        [0, 1].map((dup) => (
+          <ul role="list" class="marquee__list" aria-hidden={dup === 1 ? 'true' : undefined}>
+            {provinces.map((p) => (
+              <li class:list={[{ 'is-home': p === brand.location.city }]}>{p}</li>
+            ))}
+          </ul>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .trust__head {
+    display: grid;
+    gap: var(--s-4);
+    margin-bottom: var(--s-8);
+  }
+
+  .trust__title {
+    font-size: var(--fs-1);
+  }
+
+  .trust__tiles {
+    display: grid;
+    border-top: 1px solid var(--line);
+  }
+
+  @media (min-width: 48em) {
+    .trust__tiles {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 75em) {
+    .trust__tiles {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  .trust__tile {
+    display: grid;
+    align-content: start;
+    gap: var(--s-3);
+    padding: var(--s-6) var(--s-5) var(--s-7) 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  @media (min-width: 48em) {
+    .trust__tile {
+      padding-left: var(--s-5);
+      border-left: 1px solid var(--line);
+    }
+
+    .trust__tile:first-child,
+    .trust__tile:nth-child(3) {
+      border-left: 0;
+      padding-left: 0;
+    }
+  }
+
+  @media (min-width: 75em) {
+    .trust__tile:nth-child(3) {
+      border-left: 1px solid var(--line);
+      padding-left: var(--s-5);
+    }
+  }
+
+  .trust__k {
+    display: grid;
+    gap: var(--s-2);
+    margin-bottom: var(--s-4);
+  }
+
+  .trust__big {
+    font-family: var(--font-display);
+    font-size: clamp(2.1rem, 1.7rem + 1.1vw, 2.75rem);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+
+  .trust__label {
+    font-size: var(--fs-2xs);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .trust__t {
+    font-family: var(--font-sans);
+    font-size: var(--fs-md);
+    font-weight: 600;
+    letter-spacing: 0;
+  }
+
+  .trust__t a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s-2);
+    border-bottom: 1px solid var(--line-strong);
+  }
+
+  .trust__t a :global(.icon) {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .trust__d {
+    font-size: var(--fs-sm);
+    color: var(--muted);
+    max-width: 34ch;
+  }
+
+  .marquee {
+    margin-top: var(--section);
+    border-block: 1px solid var(--line);
+    overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  }
+
+  .marquee__track {
+    display: flex;
+    width: max-content;
+    animation: marquee 140s linear infinite;
+  }
+
+  .marquee:hover .marquee__track {
+    animation-play-state: paused;
+  }
+
+  .marquee__list {
+    display: flex;
+    flex: none;
+  }
+
+  .marquee__list li {
+    display: flex;
+    align-items: center;
+    gap: var(--s-6);
+    padding: var(--s-5) 0 var(--s-5) var(--s-6);
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 1.1rem + 1vw, 2.2rem);
+    font-weight: 300;
+    font-style: italic;
+    white-space: nowrap;
+    color: var(--ink-soft);
+  }
+
+  .marquee__list li::after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--stone-300);
+  }
+
+  .marquee__list li.is-home {
+    color: var(--ink);
+    font-style: normal;
+  }
+
+  .marquee__list li.is-home::after {
+    background: var(--champagne);
+  }
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee__track {
+      animation: none;
+    }
+  }
+</style>

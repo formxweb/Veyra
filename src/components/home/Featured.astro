@@ -1,0 +1,40 @@
+---
+import { featured, views } from '../../data/catalog';
+import ProductRail from '../../islands/ProductRail';
+
+const items = await views(featured(8));
+---
+
+<section class="section feat" aria-labelledby="feat-title">
+  <div class="container feat__head" data-reveal>
+    <div>
+      <p class="eyebrow eyebrow--rule">Vitrin</p>
+      <h2 id="feat-title" class="feat__title">Her koleksiyondan <em>bir seçme.</em></h2>
+    </div>
+  </div>
+  <div data-reveal style="--reveal-i:1">
+    <ProductRail client:visible items={items} label="Vitrin ürünleri" cta={{ href: '/magaza', label: 'Tüm ürünleri gör' }} />
+  </div>
+</section>
+
+<style>
+  .feat {
+    background: var(--paper);
+    border-block: 1px solid var(--line);
+  }
+
+  .feat__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: space-between;
+    gap: var(--s-5);
+    margin-bottom: var(--s-6);
+  }
+
+  .feat__title {
+    margin-top: var(--s-4);
+    font-size: var(--fs-2);
+    max-width: 16ch;
+  }
+</style>

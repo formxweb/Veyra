@@ -1,0 +1,322 @@
+---
+import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import { collectionStats } from '../../data/catalog';
+import { formatPrice } from '../../lib/format';
+import Icon from '../ui/Icon.astro';
+
+const art = import.meta.glob<{ default: ImageMetadata }>('/src/assets/art/cover-*.jpg', { eager: true });
+const cols = await Promise.all(
+  collectionStats().map(async (c) => {
+    const meta = art[`/src/assets/art/${c.art}.jpg`].default;
+    const img = await getImage({ src: meta, widths: [360, 560, 840, 1200], format: 'webp', quality: 76 });
+    return { ...c, img, meta };
+  }),
+);
+const pad = (n: number) => String(n).padStart(2, '0');
+---
+
+<section id="koleksiyonlar" class="section cols" aria-labelledby="cols-title">
+  <div class="container cols__head" data-reveal>
+    <p class="eyebrow eyebrow--rule">Seçki</p>
+    <h2 id="cols-title" class="cols__title">
+      {cols.length} koleksiyon, <em>tek bir özen.</em>
+    </h2>
+    <p class="lede">Ürünlerimizi rastgele dizmiyoruz. Her biri, kullanım anına ve karakterine göre bir araya getirildi.</p>
+  </div>
+
+  <!-- Desktop: editorial index with a sticky, cross-fading stage -->
+  <div class="container cols__body">
+    <div class="cols__stage" aria-hidden="true">
+      {
+        cols.map((c, i) => (
+          <img
+            src={c.img.src}
+            srcset={c.img.srcSet.attribute}
+            sizes="(min-width: 64em) 40vw, 1px"
+            width={c.meta.width}
+            height={c.meta.height}
+            alt=""
+            loading="lazy"
+            decoding="async"
+            data-stage={i}
+            class:list={[{ 'is-active': i === 0 }]}
+          />
+        ))
+      }
+      <span class="cols__stage-cap" data-stage-cap>{cols[0]?.kicker}</span>
+    </div>
+    <ol class="cols__list" role="list">
+      {
+        cols.map((c, i) => (
+          <li data-reveal style={`--reveal-i:${i}`}>
+            <a href={`/koleksiyon/${c.slug}`} class="cols__item" data-index={i} data-kicker={c.kicker}>
+              <span class="cols__num">{pad(i + 1)}</span>
+              <span class="cols__name">{c.title}</span>
+              <span class="cols__meta">
+                <span class="num">{c.count} ürün</span>
+                {c.from != null && <span class="num">{formatPrice(c.from)}’den</span>}
+              </span>
+              <Icon name="arrow-right" class="icon cols__arrow" />
+            </a>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+
+  <!-- Mobile & tablet: swipeable cover cards -->
+  <ul class="rail cols__rail" role="list" aria-label="Koleksiyonlar">
+    {
+      cols.map((c, i) => (
+        <li><a href={`/koleksiyon/${c.slug}`} class="cols__card" data-tone={c.art}>
+          <img
+            src={c.img.src}
+            srcset={c.img.srcSet.attribute}
+            sizes="(max-width: 63.99em) 72vw, 1px"
+            width={c.meta.width}
+            height={c.meta.height}
+            alt=""
+            loading="lazy"
+            decoding="async"
+          />
+          <span class="cols__card-text">
+            <span class="cols__num">{pad(i + 1)}</span>
+            <span class="cols__card-name">{c.title}</span>
+            <span class="cols__card-meta num">
+              {c.count} ürün{c.from != null ? ` · ${formatPrice(c.from)}’den` : ''}
+            </span>
+          </span>
+        </a></li>
+      ))
+    }
+  </ul>
+</section>
+
+<script>
+  const items = document.querySelectorAll<HTMLAnchorElement>('.cols__item');
+  const stage = document.querySelectorAll<HTMLImageElement>('[data-stage]');
+  const cap = document.querySelector<HTMLElement>('[data-stage-cap]');
+  const activate = (i: number, kicker?: string) => {
+    stage.forEach((img) => img.classList.toggle('is-active', Number(img.dataset.stage) === i));
+    items.forEach((a) => a.classList.toggle('is-active', Number(a.dataset.index) === i));
+    if (cap && kicker) cap.textContent = kicker;
+  };
+  items.forEach((a) => {
+    const go = () => activate(Number(a.dataset.index), a.dataset.kicker);
+    a.addEventListener('mouseenter', go);
+    a.addEventListener('focus', go);
+  });
+  if (items[0]) items[0].classList.add('is-active');
+</script>
+
+<style>
+  .cols__head {
+    display: grid;
+    gap: var(--s-4);
+    margin-bottom: var(--s-8);
+  }
+
+  .cols__title {
+    font-size: var(--fs-1);
+    max-width: 14ch;
+  }
+
+  .cols__body {
+    display: none;
+  }
+
+  .cols__rail {
+    grid-auto-columns: min(72%, 20rem);
+    margin: 0;
+    list-style: none;
+  }
+
+  @media (min-width: 64em) {
+    .cols__head {
+      grid-template-columns: 1fr 1fr;
+      align-items: end;
+    }
+
+    .cols__head .eyebrow {
+      grid-column: 1 / -1;
+    }
+
+    .cols__head .lede {
+      justify-self: end;
+    }
+
+    .cols__body {
+      display: grid;
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+      gap: var(--s-8);
+      align-items: start;
+    }
+
+    .cols__rail {
+      display: none;
+    }
+  }
+
+  .cols__stage {
+    position: sticky;
+    top: calc(var(--header-h) + var(--s-5));
+    aspect-ratio: 4 / 5;
+    background: var(--stone-100);
+    overflow: hidden;
+  }
+
+  .cols__stage img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transform: scale(1.04);
+    transition:
+      opacity var(--dur-3) var(--ease-out),
+      transform var(--dur-4) var(--ease-out);
+  }
+
+  .cols__stage img.is-active {
+    opacity: 1;
+    transform: none;
+  }
+
+  .cols__stage-cap {
+    position: absolute;
+    left: var(--s-5);
+    bottom: var(--s-5);
+    padding: 0.45rem 0.75rem;
+    background: rgb(250 247 241 / 0.86);
+    font-size: var(--fs-2xs);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .cols__list {
+    border-top: 1px solid var(--line);
+  }
+
+  .cols__item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 3.5rem 1fr auto 2rem;
+    align-items: baseline;
+    gap: var(--s-5);
+    padding-block: var(--s-5);
+    border-bottom: 1px solid var(--line);
+    transition: color var(--dur-2);
+  }
+
+  .cols__num {
+    font-family: var(--font-display);
+    font-size: var(--fs-sm);
+    color: var(--muted);
+    font-variant-numeric: lining-nums;
+  }
+
+  .cols__name {
+    font-family: var(--font-display);
+    font-size: clamp(1.9rem, 1.2rem + 1.6vw, 3.1rem);
+    font-weight: 320;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    transition:
+      transform var(--dur-3) var(--ease-out),
+      font-style var(--dur-2);
+  }
+
+  .cols__meta {
+    display: grid;
+    justify-items: end;
+    font-size: var(--fs-xs);
+    color: var(--muted);
+  }
+
+  .cols__arrow {
+    align-self: center;
+    opacity: 0;
+    transform: translateX(-8px);
+    transition:
+      opacity var(--dur-2),
+      transform var(--dur-3) var(--ease-out);
+  }
+
+  .cols__item.is-active .cols__name {
+    transform: translateX(0.6rem);
+    font-style: italic;
+  }
+
+  .cols__item.is-active .cols__arrow {
+    opacity: 1;
+    transform: none;
+  }
+
+  .cols__item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 1px;
+    width: 100%;
+    background: var(--ink);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--dur-4) var(--ease-out);
+  }
+
+  .cols__item.is-active::before {
+    transform: scaleX(1);
+  }
+
+  .cols__card {
+    position: relative;
+    display: block;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: var(--stone-100);
+  }
+
+  .cols__card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cols__card-text {
+    position: absolute;
+    inset: auto 0 0 0;
+    display: grid;
+    gap: 0.2rem;
+    padding: var(--s-5) var(--s-4) var(--s-4);
+    background: linear-gradient(180deg, transparent, rgb(244 239 230 / 0.92) 38%);
+  }
+
+  .cols__card[data-tone='cover-signal'] .cols__card-text,
+  .cols__card[data-tone='cover-orbit'] .cols__card-text {
+    background: linear-gradient(180deg, transparent, rgb(18 17 15 / 0.88) 38%);
+    color: var(--ivory);
+  }
+
+  .cols__card[data-tone='cover-signal'] .cols__num,
+  .cols__card[data-tone='cover-orbit'] .cols__num,
+  .cols__card[data-tone='cover-signal'] .cols__card-meta,
+  .cols__card[data-tone='cover-orbit'] .cols__card-meta {
+    color: var(--muted-on-ink);
+  }
+
+  .cols__card-name {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 350;
+    line-height: 1.1;
+  }
+
+  .cols__card-meta {
+    font-size: var(--fs-xs);
+    color: var(--muted);
+  }
+</style>

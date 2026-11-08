@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHead from '../components/ui/PageHead.astro';
+import CartPage from '../islands/CartPage';
+import { featured, products, views } from '../data/catalog';
+
+const all = await views(products);
+const suggestions = await views(featured(4));
+---
+
+<BaseLayout title="Sepet & Sipariş" description="Sepetinizi düzenleyin ve siparişinizi WhatsApp üzerinden VEYRA TİCARET’e iletin." noindex>
+  <PageHead
+    compact
+    eyebrow="Sepet & Sipariş"
+    title="Siparişinizi <em>tamamlayın</em>"
+    lede="Ürünlerinizi kontrol edin, teslimat bilgilerinizi yazın. Siparişiniz WhatsApp’a hazır bir mesaj olarak aktarılır; onayın ardından IBAN ve kargo bilgisini paylaşırız."
+    crumbs={[{ label: 'Sepet' }]}
+  />
+  <div class="container" style="padding-bottom: var(--section)">
+    <CartPage client:load products={all} suggestions={suggestions} />
+  </div>
+</BaseLayout>

@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/ui/Icon.astro';
+import { collectionStats } from '../data/catalog';
+
+const cols = collectionStats();
+---
+
+<BaseLayout title="Sayfa bulunamadı" noindex>
+  <section class="nf container">
+    <p class="nf__code display" aria-hidden="true">404</p>
+    <h1 class="nf__title">Aradığınız sayfa <em>burada değil.</em></h1>
+    <p class="lede">Bağlantı değişmiş ya da ürün seçkiden kaldırılmış olabilir. Koleksiyonlara göz atabilir veya mağazada arama yapabilirsiniz.</p>
+    <div class="cluster" style="justify-content:center">
+      <a class="btn" href="/magaza">Mağazaya Git <Icon name="arrow-right" class="icon icon--arrow" /></a>
+      <a class="btn btn--outline" href="/">Ana Sayfa</a>
+    </div>
+    <ul class="nf__cols" role="list">
+      {cols.map((c) => <li><a class="chip" href={`/koleksiyon/${c.slug}`}>{c.title} <span class="chip__count">{c.count}</span></a></li>)}
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .nf {
+    display: grid;
+    justify-items: center;
+    gap: var(--s-5);
+    padding-block: var(--section);
+    text-align: center;
+  }
+
+  .nf__code {
+    font-size: clamp(6rem, 4rem + 10vw, 12rem);
+    color: transparent;
+    -webkit-text-stroke: 1px var(--stone-400);
+    line-height: 0.9;
+  }
+
+  .nf__title {
+    font-size: var(--fs-2);
+  }
+
+  .nf__cols {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--s-2);
+    margin-top: var(--s-5);
+  }
+</style>

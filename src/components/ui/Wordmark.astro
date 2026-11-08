@@ -1,0 +1,43 @@
+---
+interface Props {
+  size?: 'sm' | 'md';
+  sub?: boolean;
+}
+const { size = 'md', sub = false } = Astro.props;
+---
+
+<span class:list={['wordmark', `wordmark--${size}`]}>
+  <span class="wordmark__name">VEYRA</span>
+  {sub && <span class="wordmark__sub">TİCARET</span>}
+</span>
+
+<style>
+  .wordmark {
+    display: inline-grid;
+    justify-items: center;
+    line-height: 1;
+  }
+
+  .wordmark__name {
+    font-family: var(--font-display);
+    font-weight: 420;
+    font-size: 1.5rem;
+    letter-spacing: 0.36em;
+    margin-right: -0.36em; /* optically re-centre the tracked word */
+    font-variation-settings: 'opsz' 72;
+  }
+
+  .wordmark--sm .wordmark__name {
+    font-size: 1.2rem;
+  }
+
+  .wordmark__sub {
+    margin-top: 0.4rem;
+    font-family: var(--font-sans);
+    font-size: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 0.62em;
+    margin-right: -0.62em;
+    opacity: 0.7;
+  }
+</style>
