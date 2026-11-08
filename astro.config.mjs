@@ -14,7 +14,19 @@ const site = process.env.SITE_URL || undefined;
 export default defineConfig({
   site,
   trailingSlash: 'ignore',
-  integrations: [preact(), ...(site ? [sitemap()] : [])],
+  integrations: [
+    preact(),
+    ...(site
+      ? [
+          sitemap({
+            // cart & favourites are noindex — keep them out of the sitemap
+            filter: (page) => !/\/(sepet|favoriler)\/?$/.test(page),
+            // match the canonical URLs, which have no trailing slash
+            serialize: (item) => ({ ...item, url: item.url.replace(/(.)\/$/, '$1') }),
+          }),
+        ]
+      : []),
+  ],
   prefetch: { prefetchAll: true, defaultStrategy: 'hover' },
   image: {
     responsiveStyles: false,

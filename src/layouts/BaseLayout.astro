@@ -39,7 +39,7 @@ const {
 
 const fullTitle = title ? `${title} — VEYRA TİCARET` : 'VEYRA TİCARET — Özenle seçilir. Güvenle ulaşır.';
 const site = Astro.site;
-const canonical = site ? new URL(Astro.url.pathname, site).href : undefined;
+const canonical = site ? new URL(Astro.url.pathname.replace(/(.)\/$/, '$1'), site).href : undefined;
 const og = await getImage({ src: image, width: 1200, height: 630, fit: 'cover', format: 'jpeg', quality: 82 });
 const ogUrl = site ? new URL(og.src, site).href : undefined;
 
